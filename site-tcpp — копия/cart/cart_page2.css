@@ -1,0 +1,396 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+
+.logo-text{
+
+    float:left;
+    margin-left: 35px;
+
+}
+.logo-text p{
+    font-weight: bold;
+
+}
+body{
+    font-family: "Lucida Sans Unicode";
+    font-size:22px;
+    width: 1600px;
+}
+
+header ul{
+    list-style: none;
+    margin: 0;
+    padding-left:0;
+}
+header a{
+    font-size: 18px;
+    text-decoration: none;
+    color:black;
+
+
+}
+
+header a:hover{
+    color:#246FB5;
+}
+nav img{
+    width:48px;
+    height: 35px;
+}
+nav p {
+    margin-top: -6px;
+    position: relative;
+}
+.f1 li{
+    float:left;
+    margin-left: 85px;
+    margin-top: 45px;
+    position: relative;
+}
+.elips_logo{
+    border-radius: 15%;
+    width:88px;
+    height: 70px;
+    background-color:#246FB5;
+    padding-left:10px;
+    padding-top:1px;
+    position: relative;
+    float:left;
+    margin-top: 20px;
+    margin-left: 235px;
+
+}
+.elips_logo p{
+    color:#fff;
+    position: relative;
+    margin-left:25px;
+    margin-top: 15px;
+    font-weight: bold;
+
+
+}
+.logo-text{
+    display: inline-block;
+    margin-left: 35px;
+    position: relative;
+    top:20px;
+
+}
+.logo-text p{
+    font-weight: bold;
+
+}
+.main{
+    position: relative;
+    top:50px;
+}
+.modal-footer{
+
+}
+.count-cart{
+    position: relative;
+    right: 100px;
+    bottom: 7px;
+    width: 35px;
+    height: 35px;
+    background-color:#246FB5;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+
+}
+.no-cart{
+    position: relative;
+    left: 550px;
+}
+.mini-count{
+    position: relative;
+    left:11px;
+
+}
+.main{
+    clear: both;
+}
+.qty-count{
+    opacity: 0;
+}
+table{
+    width: 650px;
+    position: relative;
+    left:15%;
+
+}
+tr{
+    box-shadow: 0 2px 16px rgba(0,0,0,.24);
+    padding-top: 20px;
+}
+td a{
+    color: black;
+    text-decoration: none;
+}
+td{
+    position: relative;
+    padding: 20px;
+
+}
+td a img{
+    width: 150px;
+    height: 150px;
+}
+.td-title{
+    width: 200px;
+}
+button.auth_but{
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    background-color:#246FB5;
+    color:#fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: .5px;
+    position: relative;
+    bottom: 5px;
+}
+
+.modal-footer{
+    position: relative;
+    left: 250px;
+}
+.btn-primary{
+    width: 170px;
+    height: 50px;
+    border-radius: 25px;
+    background-color:#246FB5;
+    color:#fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: .5px;
+
+    position: relative;
+    right: 160px;
+    top:80px;
+}
+.btn-primary:active{
+    background-color: #14365D;
+}
+.main button a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.main button a:active{
+    color:#6C85A4;
+}
+th{
+    font-size: 14px;
+    text-transform: uppercase;
+    color:#929295;
+    font-weight: lighter;
+
+}
+.btn-danger{
+    width: 170px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #85232a;
+    box-shadow: 0 2px 16px rgba(0,0,0,.24);
+    color:#fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: .5px;
+    position: relative;
+
+
+    right: 140px;
+    top:90px;
+}
+.btn-danger:active{
+    background-color: #600308;
+}
+.confirm-order{
+    width: 500px;
+    height: 430px;
+    position: relative;
+    left: 237px;
+    background-color: #F0FFFF;
+    border-left: 6px solid #0a3a62;
+}
+
+.confirm-order p{
+    margin-left: 100px;
+    margin-top: 30px;
+
+}
+.cart-modal,.confirm-order{
+    float:left;
+}
+.cart-modal{
+    position: relative;
+    left:140px;
+}
+.order-price,.order-sum,.big{
+    font-weight: bold;
+    position: relative;
+
+}
+.order-price{
+    position: relative;
+    left:50px;
+}
+.order-sum{
+    position: relative;
+    left:120px;
+}
+.big{
+    position: relative;
+    left:150px;
+}
+head hr{
+    width: 350px;
+    position: relative;
+    left:100px;
+    top:15px;
+    background-color:#DCDCDC;
+}
+.t3{
+    position: relative;
+    top: 30px;
+}
+.big2{
+    font-weight: bold;
+}
+.small{
+    font-size: 16px;
+    text-transform: uppercase;
+    color:#929295;
+    font-weight: lighter;
+}
+footer{
+    position: relative;
+    top:495px;
+    background-color: #20314F;
+    height: 380px;
+    clear: both;
+    width: 1855px;
+}
+.footer-logo{
+    border-radius: 15%;
+    width:88px;
+    height: 70px;
+    background-color:#fff;
+    color: #20314F;
+    font-weight: bold;
+    font-size: 30px;
+    padding-left:10px;
+    padding-top:1px;
+}
+.footer-logo-text{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    padding-left: 20px;
+    position: relative;
+    top:10px;
+}
+.footer-logo,.footer-logo-text{
+    display: inline-block;
+}
+.footer-logo span{
+    padding-left: 26%;
+    position: relative;
+    top:10px;
+}
+.logo-wrapper{
+    margin-left: 235px;
+    padding-top: 50px;
+}
+.logo-wrapper,.about-shop,.info-for-seller,.contacts{
+    float: left;
+}
+.about-shop{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:100px;
+    top: 78px;
+}
+.about-shop a{
+    color: #fff;
+    text-decoration: none;
+}
+.about-shop a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.about-shop span{
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+.info-for-seller{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:200px;
+    top: 78px;
+}
+.info-for-seller a{
+    color: #fff;
+    text-decoration: none;
+}
+.info-for-seller a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.info-for-seller span{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.contacts{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:300px;
+    top: 78px;
+}
+.contacts span{
+    font-weight: bolder;
+    letter-spacing: .5px;
+}
+.contacts img{
+    width: 40px;
+    height: 40px;
+    filter: invert(100%);
+    -webkit-filter:invert(100%);
+    position: relative;
+    top:10px;
+}
+.contacts .icon{
+    position: relative;
+    margin-left: 10px;
+}
+
+.icon-bar img{
+    width: 70px;
+    height: 70px;
+}
+.icon-bar{
+
+    position: relative;
+    right: 100px;
+    bottom: 445px;
+
+}
+.icon-bar{
+    position: fixed;
+    z-index: 101;
+}

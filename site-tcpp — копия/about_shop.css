@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+
+.logo-text{
+
+    float:left;
+    margin-left: 35px;
+
+}
+.logo-text p{
+    font-weight: bold;
+
+}
+body{
+    font-family: "Lucida Sans Unicode";
+    font-size:24px;
+}
+
+header ul{
+    list-style: none;
+    margin: 0;
+    padding-left:0;
+}
+header a{
+    text-decoration: none;
+    color:black;
+
+
+}
+
+header a:hover{
+    color:#246FB5;
+}
+nav img{
+    width:48px;
+    height: 35px;
+}
+nav p {
+    margin-top: -6px;
+    position: relative;
+}
+.f1 li{
+    float:left;
+    margin-left: 85px;
+    margin-top: 45px;
+    position: relative;
+}
+.elips_logo{
+    border-radius: 15%;
+    width:88px;
+    height: 70px;
+    background-color:#246FB5;
+    padding-left:10px;
+    padding-top:1px;
+    position: relative;
+    float:left;
+    margin-top: 20px;
+    margin-left: 235px;
+
+}
+.elips_logo p{
+    color:#fff;
+    position: relative;
+    margin-left:25px;
+    margin-top: 15px;
+    font-weight: bold;
+
+
+}
+.logo-text{
+    display: inline-block;
+    margin-left: 35px;
+    position: relative;
+    top:20px;
+
+}
+.logo-text p{
+    font-weight: bold;
+
+}
+
+
+
+
+
+
+
+
+
+
+footer{
+    position: relative;
+    top:600px;
+    background-color: #20314F;
+    height: 400px;
+    clear: both;
+
+}
+.footer-logo{
+    border-radius: 15%;
+    width:88px;
+    height: 70px;
+    background-color:#fff;
+    color: #20314F;
+    font-weight: bold;
+    font-size: 30px;
+    padding-left:10px;
+    padding-top:1px;
+}
+.footer-logo-text{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    padding-left: 20px;
+    position: relative;
+    top:10px;
+}
+.footer-logo,.footer-logo-text{
+    display: inline-block;
+}
+.footer-logo span{
+    padding-left: 26%;
+    position: relative;
+    top:10px;
+}
+.logo-wrapper{
+    margin-left: 235px;
+    padding-top: 50px;
+}
+.logo-wrapper,.about-shop,.info-for-seller,.contacts{
+    float: left;
+}
+.about-shop{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:100px;
+    top: 78px;
+}
+.about-shop a{
+    color: #fff;
+    text-decoration: none;
+}
+.about-shop a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.about-shop span{
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+.info-for-seller{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:200px;
+    top: 78px;
+}
+.info-for-seller a{
+    color: #fff;
+    text-decoration: none;
+}
+.info-for-seller a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.info-for-seller span{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.contacts{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:300px;
+    top: 78px;
+}
+.contacts span{
+    font-weight: bolder;
+    letter-spacing: .5px;
+}
+.contacts img{
+    width: 40px;
+    height: 40px;
+    filter: invert(100%);
+    -webkit-filter:invert(100%);
+    position: relative;
+    top:10px;
+}
+.contacts .icon{
+    position: relative;
+    margin-left: 10px;
+}

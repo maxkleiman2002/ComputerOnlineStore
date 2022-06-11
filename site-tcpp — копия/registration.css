@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+
+.logo-text{
+
+    float:left;
+    margin-left: 35px;
+
+}
+.logo-text p{
+    font-weight: bold;
+
+}
+body{
+    font-family: "Lucida Sans Unicode";
+    font-size:24px;
+}
+
+header ul{
+    list-style: none;
+    margin: 0;
+    padding-left:0;
+}
+header a{
+    text-decoration: none;
+    color:black;
+
+
+}
+
+header a:hover{
+    color:#246FB5;
+}
+nav img{
+    width:48px;
+    height: 35px;
+}
+nav p {
+    margin-top: -6px;
+    position: relative;
+}
+.f1 li{
+    float:left;
+    margin-left: 85px;
+    margin-top: 45px;
+    position: relative;
+}
+.elips_logo{
+    border-radius: 15%;
+    width:88px;
+    height: 70px;
+    background-color:#246FB5;
+    padding-left:10px;
+    padding-top:1px;
+    position: relative;
+    float:left;
+    margin-top: 20px;
+    margin-left: 235px;
+
+}
+.elips_logo p{
+    color:#fff;
+    position: relative;
+    margin-left:25px;
+    margin-top: 15px;
+    font-weight: bold;
+
+
+}
+.logo-text{
+    display: inline-block;
+    margin-left: 35px;
+    position: relative;
+    top:20px;
+
+}
+.logo-text p{
+    font-weight: bold;
+
+}
+
+
+.main{
+    clear: both;
+}
+
+label{
+    float: left;
+    padding-left: 20px;
+}
+input,select{
+    width: 200px;
+    height: 30px;
+    font-size: 24px;
+    outline: none;
+}
+input,select{
+    position: relative;
+    right: 14%;
+    border-radius: 3px;
+    border: none;
+}
+form h1{
+    text-align: center;
+    position: relative;
+    top:10px;
+    color:#EBEFF0;
+}
+.form-wrapper{
+    position: relative;
+    left: 18%;
+    top:120px;
+    background-color:#4381B4;
+    width: 1100px;
+    height: 1200px;
+    border-radius: 15px;
+    letter-spacing: .5px;
+    padding: 30px;
+}
+.to-centre{
+    position: relative;
+    left:23%;
+    top:3%;
+}
+legend{
+    color:#fff;
+    font-size: 27px;
+}
+fieldset{
+    width: 750px;
+}
+div.group {
+    padding-bottom: 5px;
+}
+.form-wrapper{
+    float: left;
+}
+
+.main button{
+    width: 250px;
+    height: 60px;
+    border-radius: 25px;
+    background-color:#EA942D;
+    color:#fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: .5px;
+    position: relative;
+    left:16%;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+.main button:active{
+    background-color:#E27E1B;
+}
+fieldset {
+    margin-top: 15px;
+    position: relative;
+    right: 70px;
+    color: #fff;
+}
+legend{
+    margin-top: 15px;
+
+}
+fieldset {
+    font-family: sans-serif;
+    border: 5px solid #20314F;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+fieldset legend {
+    background: #20314F;
+    color: #fff;
+    padding: 5px 10px ;
+    font-size: 32px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #ddd;
+    margin-left: 20px;
+}
+
+button.auth_but{
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    background-color:#246FB5;
+    color:#fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: .5px;
+    position: relative;
+    bottom: 5px;
+}
+button:active{
+    background-color: #14365D;
+}
+.group{
+    clear: both;
+    text-align: right;
+    line-height: 30px;
+    margin-top: 15px;
+}
+
+.err-msg{
+    border: 2px solid #E27E1B;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+    margin-top: 10px;
+    letter-spacing: .5px;
+    display: block;
+}
+.err-msg2 {
+    border: 2px solid #E27E1B;
+    border-radius: 3px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+    letter-spacing: .5px;
+    display: block;
+
+}
+.count-cart{
+    position: relative;
+    right: 100px;
+    bottom: 7px;
+    width: 35px;
+    height: 35px;
+    background-color:#246FB5;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+
+}
+.no-cart{
+    position: relative;
+    left: 550px;
+}
+.mini-count{
+    position: relative;
+    left:11px;
+
+}
+
+
+
+footer{
+    top:440px;
+    position: relative;
+    background-color: #20314F;
+    height: 400px;
+    clear: both;
+}
+.footer-logo{
+    border-radius: 15%;
+    width:88px;
+    height: 70px;
+    background-color:#fff;
+    color: #20314F;
+    font-weight: bold;
+    font-size: 30px;
+    padding-left:10px;
+    padding-top:1px;
+}
+.footer-logo-text{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    padding-left: 20px;
+    position: relative;
+    top:10px;
+}
+.footer-logo,.footer-logo-text{
+    display: inline-block;
+}
+.footer-logo span{
+    padding-left: 26%;
+    position: relative;
+    top:10px;
+}
+.logo-wrapper{
+    margin-left: 235px;
+    padding-top: 50px;
+}
+.logo-wrapper,.about-shop,.info-for-seller,.contacts{
+    float: left;
+}
+.about-shop{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:100px;
+    top: 78px;
+}
+.about-shop a{
+    color: #fff;
+    text-decoration: none;
+}
+.about-shop a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.about-shop span{
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+.info-for-seller{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:200px;
+    top: 78px;
+}
+.info-for-seller a{
+    color: #fff;
+    text-decoration: none;
+}
+.info-for-seller a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.info-for-seller span{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.contacts{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    left:300px;
+    top: 78px;
+}
+.contacts span{
+    font-weight: bolder;
+    letter-spacing: .5px;
+}
+.contacts img{
+    width: 40px;
+    height: 40px;
+    filter: invert(100%);
+    -webkit-filter:invert(100%);
+    position: relative;
+    top:10px;
+}
+.contacts .icon{
+    position: relative;
+    margin-left: 10px;
+}
