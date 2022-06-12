@@ -6,6 +6,28 @@ require_once '../inc/connect.php';
 require_once '../inc/funcs.php';
 $products = get_products();
 print_r($_SESSION['user']);
+
+
+if(!empty($_GET["action"])) {
+    switch($_GET["action"]) {
+        case "empty":
+            unset($_SESSION["cart"]);
+            unset($_SESSION["cart.sum"]);
+            unset($_SESSION["cart.qty"]);
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,7 +171,7 @@ print_r($_SESSION['user']);
         <div class="modal-footer">
 
             <button type="button"  class="btn-primary"><a href="../orderForm.php" class="orderlink"> Оформити замовлення</a></button>
-            <button type="button" class="btn-danger" id="clear_cart" >Очистити корзину</a></button>
+            <button type="button" class="btn-danger" id="clear_cart" ><a href="cart_page.php?action=empty" >Очистити корзину</a></button>
             
         </div>
         <?php endif; ?>
