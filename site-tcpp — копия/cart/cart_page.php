@@ -1,10 +1,11 @@
 <?php
-session_start();
+error_reporting(-1);
+
 require_once '../vendor/signin.php';
 require_once '../inc/connect.php';
 require_once '../inc/funcs.php';
 $products = get_products();
-
+print_r($_SESSION['user']);
 ?>
 <!DOCTYPE html>
 <html lang="en">

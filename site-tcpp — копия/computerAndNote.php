@@ -1,5 +1,6 @@
 <?php
-session_start();
+session_destroy();
+error_reporting(-1);
 require_once 'vendor/signin.php';
 require_once 'inc/connect.php';
 require_once 'inc/funcs.php';
@@ -40,6 +41,7 @@ $products = get_products();
             <li><a href="payment.php">Оплата</a></li>
             <li><a href="contacts.php">Контакти</a></li>
             <?php
+            session_start();
             if($_SESSION['user']) {
 
                 echo ' <li ><a href = "vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';

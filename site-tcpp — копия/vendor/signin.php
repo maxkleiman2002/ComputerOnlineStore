@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 $dbHost = "localhost";
@@ -39,6 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else{
         $_SESSION['message3'] = 'Невірний логін або пароль';
+
         header("Location: ../authorization.php");
     }
 

@@ -4,6 +4,7 @@
     if($_SESSION['user']){
         header("Location: profile/profile_main.php");
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +65,8 @@
 
     </div>
       <?php
+      //if ($_SESSION['message3']) {
+      //global $message3;
       if ($_SESSION['message3']) {
           echo '<p class="err-msg3" style="border: 2px solid #E27E1B;
     border-radius: 3px;
