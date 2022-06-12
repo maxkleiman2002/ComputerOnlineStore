@@ -88,7 +88,7 @@ $products = get_products();
             </div>
         </div>
     </div>
-<<?php session_destroy(); ?>
+
     <div class="conteiner">
         <?php if(!empty($products)): ?>
             <?php foreach($products as  $product): ?>

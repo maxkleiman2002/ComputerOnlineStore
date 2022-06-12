@@ -18,8 +18,8 @@ function get_products(): array
    return $res->fetchAll();
 
 }
-function get_product(int $id)
-//function get_product(int $id): array|false
+//function get_product(int $id)
+function get_product(int $id): array|false
 {
     global $pdo;
 
@@ -35,7 +35,7 @@ function add_to_cart($product): void
         $_SESSION['cart'][$product['id']]['qty'] += 1;
     } else {
         $_SESSION['cart'][$product['id']] = [
-            //'id' => $product['id'],
+            'id' => $product['id'],
             'title' => $product['title'],
             'slug' => $product['slug'],
             'price' => $product['price'],

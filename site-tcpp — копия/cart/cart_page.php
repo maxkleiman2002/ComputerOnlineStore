@@ -1,6 +1,5 @@
 <?php
-error_reporting(-1);
-
+session_start();
 require_once '../vendor/signin.php';
 require_once '../inc/connect.php';
 require_once '../inc/funcs.php';
@@ -149,7 +148,7 @@ print_r($_SESSION['user']);
         <div class="modal-footer">
 
             <button type="button"  class="btn-primary"><a href="../orderForm.php" class="orderlink"> Оформити замовлення</a></button>
-            <button type="button" class="btn-danger" id="clear_cart" ><a href="cart.php?clear=all"
+            <button type="button" class="btn-danger" id="clear_cart" ><a href="cart1.php?clear=all"
                                                                          onclick="return confirm('Ви точно хочете видалит вміст своєї корзини')"
                                                                          class="btn btn-sm btn-danger">Очистити корзину</a></button>
             

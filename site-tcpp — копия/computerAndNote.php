@@ -1,6 +1,5 @@
 <?php
-session_destroy();
-error_reporting(-1);
+session_start();
 require_once 'vendor/signin.php';
 require_once 'inc/connect.php';
 require_once 'inc/funcs.php';
@@ -107,7 +106,7 @@ $products = get_products();
                                 <?php  endif; ?>
                                 <?= $product['price'] ?> грн
                             </div>
-                            <button>  <a href="?cart=add&id=<?php echo $product['id']; ?>" class="btn btn-info btn-block add-to-cart" data-id="<?php echo $product['id']; ?>">
+                            <button>  <a href="?cart=add&id=<?= $product['id'] ?>" class="btn btn-info btn-block add-to-cart" data-id="<?= $product['id'] ?>">
                                     <i class="fas fa-cart-arrow-down"></i> Купити
                                 </a></button>
 
