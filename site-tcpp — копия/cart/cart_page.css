@@ -221,6 +221,7 @@ th{
     height: 430px;
     position: relative;
     left: 237px;
+    top:100px;
     background-color: #F0FFFF;
     border-left: 6px solid #0a3a62;
 }
@@ -229,6 +230,7 @@ th{
     margin-left: 100px;
     margin-top: 30px;
 
+
 }
 .cart-modal,.confirm-order{
     float:left;
@@ -236,6 +238,7 @@ th{
 .cart-modal{
     position: relative;
     left:140px;
+    top:100px;
 }
 .order-price,.order-sum,.big{
     font-weight: bold;

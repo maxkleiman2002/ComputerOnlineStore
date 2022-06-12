@@ -5,7 +5,7 @@ require_once '../vendor/signin.php';
 require_once '../inc/connect.php';
 require_once '../inc/funcs.php';
 $products = get_products();
-print_r($_SESSION['user']);
+
 
 
 if(!empty($_GET["action"])) {
@@ -18,16 +18,6 @@ if(!empty($_GET["action"])) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +26,7 @@ if(!empty($_GET["action"])) {
     <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Корзина</title>
-    <link rel="stylesheet" href="cart_page2.css">
+    <link rel="stylesheet" href="cart_page.css">
 
 </head>
 <body>
@@ -81,12 +71,13 @@ if(!empty($_GET["action"])) {
         </ul>
     </nav>
 </header>
-<div class="main">
+
 
     <div class="cart-modal">
         <div class="modal-body">
 
             <?php if(!empty($_SESSION['cart'])):?>
+            <form action="../order/orderForm1.php" method="POST">
                 <table class="table">
                     <tr>
                         <th scope="col"></th>
@@ -141,6 +132,12 @@ if(!empty($_GET["action"])) {
                             </tr>
                         <?php endif; ?>
 
+                        <input type="hidden" name="category" value="<?=$item['category']?>"/>
+                        <input type="hidden" name="title" value="<?=$item['title']?>"/>
+                        <input type="hidden" name="price" value="<?=$item['price']?>"/>
+                        <input type="hidden" name="qty" value="<?=$item['qty']?>"/>
+                        <input type="hidden" name="id" value="<?=$item['id']?>"/>
+
 
                     <?php endforeach;?>
 
@@ -170,10 +167,12 @@ if(!empty($_GET["action"])) {
         <?php if(!empty($_SESSION['cart'])):?>
         <div class="modal-footer">
 
-            <button type="button"  class="btn-primary"><a href="../orderForm.php" class="orderlink"> Оформити замовлення</a></button>
-            <button type="button" class="btn-danger" id="clear_cart" ><a href="cart_page.php?action=empty" >Очистити корзину</a></button>
+            <button type="submit"  class="btn-primary"> Оформити замовлення</button>
+            <button type="button" class="btn-danger" id="clear_cart" ><a style="color: #fff;text-decoration: none;" href="cart_page.php?action=empty" class="clear_cart" >Очистити корзину</a></button>
             
         </div>
+    </div>
+</form>
         <?php endif; ?>
 
 

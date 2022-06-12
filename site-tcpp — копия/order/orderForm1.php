@@ -1,10 +1,48 @@
 <?php
-ini_set('display_errors', 'Off');
+
 session_start();
-require_once 'vendor/signin.php';
-require_once 'inc/connect.php';
-require_once 'inc/funcs.php';
+ini_set('display_errors', 'Off');
+require_once '../inc/connect.php';
+require_once '../inc/funcs.php';
 $products = get_products();
+
+$dbHost = "localhost";
+$dbXeHost="localhost/XE";
+$dbUsername="root";
+$dbPassword = "";
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+    $con = mysqli_connect($dbHost, $dbUsername, $dbPassword);
+    if (!$con) {
+        exit('Connect Error (' . mysqli_connect_errno() . ') '
+            . mysqli_connect_error());
+    }
+    mysqli_set_charset($con, 'utf-8');
+
+    mysqli_select_db($con, "compshop");
+
+
+    $category = mysqli_real_escape_string($con,$_POST['category']);
+    $title = mysqli_real_escape_string($con,$_POST['title']);
+    $price = mysqli_real_escape_string($con,$_POST['price']);
+    $qty = mysqli_real_escape_string($con,$_POST['qty']);
+    $img = mysqli_real_escape_string($con,$_POST['qty']);
+    $sum_qty = mysqli_real_escape_string($con,$_SESSION['cart.qty']);
+    $sum_price = mysqli_real_escape_string($con, $_POST['cart.sum']);
+    mysqli_select_db($con, "compshop");
+    mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category) 
+    VALUES ('" . $title . "', '" . $price . "', '" . $qty. "','" . $category . "')");
+    mysqli_close($con);
+}
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +84,7 @@ $products = get_products();
         <hr color="DBDBDC">
         <h1>Оформлення замовлення</h1>
     </div>
-    <form action="vendor/registration_check.php" method="POST">
+    <form action="../vendor/registration_check.php" method="POST">
         <div class="form-wrapper">
 
             <div class="to-centre">
@@ -136,23 +174,23 @@ $products = get_products();
 
     <div class="about-shop">
         <p> <span>COMPUTER FLAGMAN</span></p>
-        <a href="about_shop.php"> <p>Про компанію</p></a>
+        <a href="../about_shop.php"> <p>Про компанію</p></a>
         <a href=""> <p>Стати партнером</p></a>
         <a href=""><p>Робота у Computer Flagman</p></a>
         <a href=""> <p>Правова інформація</p></a>
     </div>
     <div class="info-for-seller">
         <p><span>ПОКУПЦЮ</span></p>
-        <p><a href="delivety.php">Доставка та оплата</a></p>
+        <p><a href="../delivety.php">Доставка та оплата</a></p>
         <p><a href="">Обмін та повернення товару</a></p>
         <p><a href="">Гарантія</a></p>
-        <p><a href="question.php">Задайте питання</a></p>
+        <p><a href="../question.php">Задайте питання</a></p>
     </div>
     <div class="contacts">
         <p>
             <span>Контактні данні: </span><br>
-            <img src="icons/phone.png" alt="phone" /> <span class="icon">+38 068 190 2723</span><br>
-            <img src="icons/message_icon.png" alt="email" /> <span class="icon">maxkleiman2002@gmail.com</span>
+            <img src="../icons/phone.png" alt="phone" /> <span class="icon">+38 068 190 2723</span><br>
+            <img src="../icons/message_icon.png" alt="email" /> <span class="icon">maxkleiman2002@gmail.com</span>
         </p>
         <br/>
         <p>

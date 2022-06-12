@@ -22,7 +22,9 @@ body{
     width: 1600px;
 }
 
-
+a.clear_cart{
+    color: #fff;
+}
 .elips_logo{
     border-radius: 15%;
     width:88px;
