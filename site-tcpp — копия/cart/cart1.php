@@ -38,7 +38,12 @@ if(isset($_GET['cart']))
             }
             else
             {
-                echo json_encode(['code' => 'ok', 'answer' => $product ]);
+                add_to_cart($product);
+                ob_start();
+                require 'cart_page.php';
+                $cart = ob_get_clean();
+               // echo json_encode(['code' => 'ok', 'answer' => $product ]);
+                echo json_encode(['code' => 'ok', 'answer' => $cart ]);
             }
 
             break;

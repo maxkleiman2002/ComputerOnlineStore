@@ -73,7 +73,7 @@ $products = get_products();
 <div class="main">
 
 
-
+<?php debug($_SESSION);?>
     <div class="conteiner">
         <?php if(!empty($products)): ?>
             <?php foreach($products as  $product): ?>
