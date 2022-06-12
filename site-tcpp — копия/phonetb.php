@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 'Off');
 session_start();
 require_once 'vendor/signin.php';
 require_once 'inc/connect.php';
@@ -50,7 +51,7 @@ $products = get_products();
             }
             ?>
 
-            <li><a href="cart/cart_page.php" id="#get-cart"><img src="../cart.svg"></a></li>
+            <li><a href="cart/cart_page.php" id="#get-cart"><img src="cart.svg"></a></li>
 
             <li><div class="count-cart">
                     <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>

@@ -1,5 +1,6 @@
 <?php
-    session_start();
+ini_set('display_errors', 'Off');
+session_start();
     require_once 'vendor/signin.php';
     require_once 'inc/connect.php';
     require_once 'inc/funcs.php';

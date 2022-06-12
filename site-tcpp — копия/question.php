@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', 'Off');
 require_once 'vendor/signin.php';
 ?>
 

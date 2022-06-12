@@ -33,10 +33,7 @@
 
 $(function() {
 
-    function showCart(cart)
-    {
-        $('.cart-modal').html(cart);
-    }
+
 
 
     $('.add-to-cart').on('click',function (e){
@@ -50,7 +47,7 @@ $(function() {
             dataType: 'json',
             success: function (res) {
                 if(res.code == 'ok'){
-                    showCart(res.answer);
+                    //
                 }
                 else {
                     alert(res.answer);

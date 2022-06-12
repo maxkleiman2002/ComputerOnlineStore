@@ -1,4 +1,5 @@
 <?php
+    ini_set('display_errors', 'Off');
     require_once 'vendor/signin.php';
     session_start();
 ?>
@@ -46,7 +47,7 @@
                 echo ' <li ><a href = "authorization.php" ><button class="auth_but" > Вхід</button ></a ></li >';
             }
             ?>
-            <li><a href="cart/cart_page.php" id="#get-cart"><img src="../cart.svg"></a></li>
+            <li><a href="cart/cart_page.php" id="#get-cart"><img src="cart.svg"></a></li>
 
             <li><div class="count-cart">
                     <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>

@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 'Off');
 session_start();
 require_once 'vendor/signin.php';
 require_once 'inc/connect.php';
@@ -73,7 +74,7 @@ $products = get_products();
 <div class="main">
 
 
-<?php debug($_SESSION);?>
+
     <div class="conteiner">
         <?php if(!empty($products)): ?>
             <?php foreach($products as  $product): ?>

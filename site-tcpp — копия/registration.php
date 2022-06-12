@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 'Off');
 session_start();
 if($_SESSION['user']){
     header("Location: profile/profile_main.php");
