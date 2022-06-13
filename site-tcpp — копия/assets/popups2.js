@@ -1,28 +1,28 @@
-const popupLinks2 = document.querySelectorAll('.popup-link2');
+const popupLinks_edit = document.querySelectorAll('.popup-link-edit');
 const body2 = document.querySelector('body');
-const lockPadding2 = document.querySelectorAll(".lock-padding");
+const lockPadding_edit = document.querySelectorAll(".lock-padding-edit");
 
 let unlock2 = true;
 const timeout2 = 800;
 
-if(popupLinks2.length > 0){
-    for(let i = 0; i<popupLinks2.length;i++){
-        const popupLink = popupLinks2[i];
-        popupLink.addEventListener("click",function (e){
-            const popupName = popupLink.getAttribute("href").replace("#","");
-            const currentPopup = document.getElementById(popupName);
-            console.log(currentPopup);
-            popupOpen(currentPopup);
+if(popupLinks_edit.length > 0){
+    for(let i = 0; i<popupLinks_edit.length;i++){
+        const popupLink_edit = popupLinks_edit[i];
+        popupLink_edit.addEventListener("click",function (e){
+            const popupName_edit = popupLink_edit.getAttribute("href").replace("#","");
+            const currentPopup_edit = document.getElementById(popupName_edit);
+            console.log(currentPopup_edit);
+            popupOpen(currentPopup_edit);
             e.preventDefault();
         });
     }
 }
-const popupCloseIcon2 = document.querySelectorAll('.close-popup2');
-if(popupCloseIcon2.length > 0){
-    for(let i = 0; i < popupCloseIcon2.length;i++){
-        const el = popupCloseIcon2[i];
-        el.addEventListener('click',function (e){
-            popupClose(el.closest('.popup2'));
+const popupCloseIcon_edit = document.querySelectorAll('.popup_close_edit');
+if(popupCloseIcon_edit.length > 0){
+    for(let i = 0; i < popupCloseIcon_edit.length;i++){
+        const el_edit = popupCloseIcon_edit[i];
+        el_edit.addEventListener('click',function (e){
+            popupClose(el_edit.closest('.popup_edit'));
             e.preventDefault();
         });
     }
@@ -30,31 +30,31 @@ if(popupCloseIcon2.length > 0){
 
 function popupOpen(currentPopup){
     if(currentPopup && unlock2){
-        const popupActive = document.querySelector('.popup2.open');
-        if(popupActive){
-            popupClose(popupActive,false);
+        const popupActive_edit = document.querySelector('.popup_edit.open');
+        if(popupActive_edit){
+            popupClose(popupActive_edit,false);
         }
         else {
             bodyLock();
         }
         currentPopup.classList.add('open');
         currentPopup.addEventListener('click',function (e){
-            if(!e.target.closest('.popup-content2')){
-                popupClose(e.target.closest('.popup2'));
+            if(!e.target.closest('.popup_edit-content')){
+                popupClose(e.target.closest('.popup_edit'));
             }
         });
     }
 }
 
 function bodyLock(){
-    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapp').offsetWidth + 'px';
-    if(lockPadding2.length > 0) {
-        for (let i = 0; i < lockPadding2.length; i++) {
-            const el = lockPadding2[i];
-            el.style.paddingRight = lockPaddingValue;
+    const lockPaddingValue_edit = window.innerWidth - document.querySelector('.wrapp').offsetWidth + 'px';
+    if(lockPadding_edit.length > 0) {
+        for (let i = 0; i < lockPadding_edit.length; i++) {
+            const el_edit = lockPadding_edit[i];
+            el_edit.style.paddingRight = lockPaddingValue_edit;
         }
     }
-    body2.style.paddingRight = lockPaddingValue;
+    body2.style.paddingRight = lockPaddingValue_edit;
     body2.classList.add('lock');
 
     unlock2 = false;
@@ -74,10 +74,10 @@ function popupClose(popupActive,doUnlock = true){
 
 function bodyUnLock(){
     setTimeout(function (){
-        if(lockPadding2.length > 0) {
-            for (let i = 0; i < lockPadding2.length; i++) {
-                const el = lockPadding2[i];
-                el.style.paddingRight = '0px';
+        if(lockPadding_edit.length > 0) {
+            for (let i = 0; i < lockPadding_edit.length; i++) {
+                const el_edit = lockPadding_edit[i];
+                el_edit.style.paddingRight = '0px';
             }
         }
         body2.style.paddingRight = '0px';
@@ -91,8 +91,8 @@ function bodyUnLock(){
 }
 document.addEventListener('keydown',function (e){
     if(e.which === 27){
-        const popupActive = document.querySelector('.popup2.open');
-        popupClose(popupActive);
+        const popupActive_edit = document.querySelector('.popup_edit.open');
+        popupClose(popupActive_edit);
     }
 });
 

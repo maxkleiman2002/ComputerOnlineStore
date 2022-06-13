@@ -99,7 +99,7 @@ if(!empty($_GET["action"])) {
             <td class="old_price-td"><?=$product['old_price'] ?></td>
             <td class="hit-td"><?=$product['hit'] ?></td>
             <td class="sale-td"><?=$product['sale'] ?></td>
-            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup_edit" >Редагувати</a> </button></td>
+            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup_edit" class="popup-link-edit">Редагувати</a> </button></td>
             <td class="delete-td"><button type="button" class="remove-button"> <a href="admin_catalog.php?action=remove&id=<?php echo $product["id"]; ?>">Видалити</a> </button></td>
         </tr>
         <?php endforeach;?>
@@ -146,7 +146,7 @@ if(!empty($_GET["action"])) {
                         <label for="category">Тип товару: </label>
                         <br>
                         <input type="radio" id="category" name="category" value="1"><span class="cat_span"> Комп'ютери та ноутбуки</span><br>
-                        <input type="radio" id="category2" name="category" value="3"><span class="cat_span">Смартфони,ТБ,Електроніка</span><br>
+                        <input type="radio" id="category2" name="category" value="3"><span class="cat_span">Смартфони/ТБ/Електроніка</span><br>
                         <input type="radio" id="category3" name="category" value="2"><span class="cat_span">Комп'ютерні комплектуючі</span><br>
                         <input type="radio" id="category4" name="category" value="4"><span class="cat_span">Товари для геймерів</span><br>
                     </div>
@@ -208,7 +208,7 @@ if(!empty($_GET["action"])) {
                                 <label for="category">Тип товару: </label>
                                 <br>
                                 <input type="radio" id="category" name="category" value="1"><span class="cat_span"> Комп'ютери та ноутбуки</span><br>
-                                <input type="radio" id="category2" name="category" value="3"><span class="cat_span">Смартфони,ТБ,Електроніка</span><br>
+                                <input type="radio" id="category2" name="category" value="3"><span class="cat_span">Смартфони/ТБ/Електроніка</span><br>
                                 <input type="radio" id="category3" name="category" value="2"><span class="cat_span">Комп'ютерні комплектуючі</span><br>
                                 <input type="radio" id="category4" name="category" value="4"><span class="cat_span">Товари для геймерів</span><br>
                             </div>

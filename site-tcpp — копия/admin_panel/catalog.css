@@ -414,15 +414,15 @@ input[type=text],textarea{
 }
 #category2{
     position: relative;
-    left:140px;
+    left: 148px;
 }
 #category3{
     position: relative;
-    left:135px;
+    left:136.5px;
 }
 #category4{
     position: relative;
-    left:82px;
+    left:81px;
 }
 .true,.false{
     position: relative;
@@ -460,13 +460,14 @@ button[type=submit]{
     position: relative;
     bottom: 5px;
     margin-top: 50px;
-    
+
 }
 button[type=submit]:active{
     background-color: rgb(252, 13, 13);
 }
 
 .popup_edit{
+    letter-spacing: 0.5px;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -510,11 +511,11 @@ button[type=submit]:active{
     right: 10px;
     top:10px;
 }
-.popup_edit:target{
+.popup_edit.open{
     opacity: 1;
     visibility: visible;
 }
-.popup_edit:target .popup_edit-content{
+.popup_edit.open .popup_edit-content{
     transform: perspective(600px) translate(0px,0px) rotateX(0deg);
     opacity: 1;
 }
