@@ -6,6 +6,13 @@ require_once '../inc/connect.php';
 require_once '../inc/funcs.php';
 $products = get_products();
 
+$grand_total = 0;
+$all_items = "";
+$items = array();
+
+
+
+
 $dbHost = "localhost";
 $dbXeHost="localhost/XE";
 $dbUsername="root";
@@ -28,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = mysqli_real_escape_string($con,$_POST['title']);
     $price = mysqli_real_escape_string($con,$_POST['price']);
     $qty = mysqli_real_escape_string($con,$_POST['qty']);
-    $img = mysqli_real_escape_string($con,$_POST['qty']);
+    $img = mysqli_real_escape_string($con,$_POST['img']);
     $sum_qty = mysqli_real_escape_string($con,$_SESSION['cart.qty']);
     $sum_price = mysqli_real_escape_string($con, $_POST['cart.sum']);
     mysqli_select_db($con, "compshop");
@@ -72,8 +79,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
+    <nav>
+        <ul class="f1">
+            <li><a href="../main_screen.php">Головна</a></li>
+            <li><a href="../delivety.php">Доставка</a></li>
+            <li><a href="../payment.php">Оплата</a></li>
+            <li><a href="../contacts.php">Контакти</a></li>
+            <?php
+            if($_SESSION['user']) {
 
+                echo ' <li ><a href = "../vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+
+            }
+            else{
+                echo ' <li ><a href = "../authorization.php" ><button class="auth_but" > Вхід</button ></a ></li >';
+            }
+            ?>
+            <li><a href="#" id="id-cart"> <img src="../cart.svg"></a></li>
+
+            <li><div class="count-cart">
+                    <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
+                </div> </li>
+        </ul>
+    </nav>
 </header>
+
 
 
 
@@ -84,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <hr color="DBDBDC">
         <h1>Оформлення замовлення</h1>
     </div>
-    <form action="../vendor/registration_check.php" method="POST">
+    <form action="checkout.php" method="POST">
         <div class="form-wrapper">
 
             <div class="to-centre">
@@ -126,19 +156,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <fieldset>
                     <legend>Спосіб оплати: </legend>
                     <div class="group">
-                        <label for="noCard">Оплата при отиманні<input type="radio" value="0" name="payment_method" id="noCard"></label><br>
+                        <label for="noCard">Оплата при отиманні<input type="radio" value="Оплата готівкою" name="payment_method" id="noCard"></label><br>
                     </div>
                     <div class="group">
                         <label for="card">Оплата карткою&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" value="1" name="payment_method" id="card"></label>
+                            <input type="radio" value="Безготівкова оплата" name="payment_method" id="card"></label>
                     </div>
-                    <input type="hidden" name="products"
+
                            <input type="hidden" name = "grand_total" value="<?=$_SESSION['cart.sum'] + 78 ?>">
+
+                    <input type="hidden" name = "total_qty" value="<?=$_SESSION['cart.qty'] ?>">
 
 
 </div>
         </div>
-    </form>
+
     <div class="order-info">
 
         <div class="confirm-order">
@@ -154,13 +186,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="modal-footer">
 
-                <button type="button"  class="btn-primary"><a href="" class="orderlink"> Підтвердити замовлення</a></button>
+                <button type="submit"  class="btn-primary">Підтвердити замовлення</button>
             </div>
 
 
     </div>
 </div>
-
+    </form>
 <footer>
 
     <div class="logo-wrapper">

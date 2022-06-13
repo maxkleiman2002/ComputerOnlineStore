@@ -85,13 +85,6 @@ nav p {
     font-weight: bold;
 
 }
-.main{
-    position: relative;
-    top:50px;
-}
-.modal-footer{
-
-}
 .count-cart{
     position: relative;
     right: 100px;
@@ -113,38 +106,6 @@ nav p {
     left:11px;
 
 }
-.main{
-    clear: both;
-}
-.qty-count{
-    opacity: 0;
-}
-table{
-    width: 650px;
-    position: relative;
-    left:15%;
-
-}
-tr{
-    box-shadow: 0 2px 16px rgba(0,0,0,.24);
-    padding-top: 20px;
-}
-td a{
-    color: black;
-    text-decoration: none;
-}
-td{
-    position: relative;
-    padding: 20px;
-
-}
-td a img{
-    width: 150px;
-    height: 150px;
-}
-.td-title{
-    width: 200px;
-}
 button.auth_but{
     width: 100px;
     height: 50px;
@@ -158,131 +119,126 @@ button.auth_but{
     position: relative;
     bottom: 5px;
 }
-
-.modal-footer{
+.head hr{
+    width: 1260px;
     position: relative;
-    left: 250px;
+    top:30px;
+    left:240px;
 }
-.btn-primary{
-    width: 170px;
-    height: 50px;
-    border-radius: 25px;
-    background-color:#246FB5;
-    color:#fff;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    letter-spacing: .5px;
-
-    position: relative;
-    right: 160px;
-    top:80px;
-}
-.btn-primary:active{
-    background-color: #14365D;
-}
-.main button a{
-    color: #fff;
-    text-decoration: none;
-}
-
-.main button a:active{
-    color:#6C85A4;
-}
-th{
-    font-size: 14px;
-    text-transform: uppercase;
-    color:#929295;
-    font-weight: lighter;
-
-}
-.btn-danger{
-    width: 170px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: #85232a;
-    box-shadow: 0 2px 16px rgba(0,0,0,.24);
-    color:#fff;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    letter-spacing: .5px;
+.head h1{
     position: relative;
 
 
-    right: 140px;
-    top:90px;
+    text-align: center;
+    top: 80px;
+    right: 70px;
+    font-size: 32px;
+    font-weight: bolder;
 }
-.btn-danger:active{
-    background-color: #600308;
+
+form{
+    position: relative;
+
+
+    width: 1200px;
 }
-.confirm-order{
+.wrapper{
+    position: relative;
+    left:250px;
+    top:100px;
+    border: 5px solid #14365D;
+    padding: 15px;
+}
+.main{
+    clear: both;
+}
+.group{
+    margin-top: 15px;
+}
+label{
+    float: left;
+    padding-left: 20px;
+}
+input{
     width: 500px;
-    height: 430px;
-    position: relative;
-    left: 237px;
-    top:100px;
-    background-color: #F0FFFF;
-    border-left: 6px solid #0a3a62;
-}
-
-.confirm-order p{
-    margin-left: 100px;
-    margin-top: 30px;
-
-
-}
-.cart-modal,.confirm-order{
-    float:left;
-}
-.cart-modal{
-    position: relative;
-    left:140px;
-    top:100px;
-}
-.order-price,.order-sum,.big{
-    font-weight: bold;
-    position: relative;
-
-}
-.order-price{
-    position: relative;
-    left:50px;
-}
-.order-sum{
-    position: relative;
-    left:120px;
-}
-.big{
-    position: relative;
-    left:150px;
-}
-head hr{
-    width: 350px;
+    height: 30px;
     position: relative;
     left:100px;
-    top:15px;
-    background-color:#DCDCDC;
+    font-size: 24px;
+    outline: none;
+    border: none;
 }
-.t3{
+
+form h1{
+    text-align: center;
     position: relative;
-    top: 30px;
+    top:10px;
+    color:#EBEFF0;
 }
-.big2{
+
+.to-centre{
+    position: relative;
+    left:8%;
+    top:3%;
+}
+legend{
+    color:#fff;
+    font-size: 27px;
+}
+fieldset{
+    width: 600px;
+}
+div.group {
+    padding-bottom: 5px;
+}
+
+
+.main button{
+    width: 250px;
+    height: 60px;
+    border-radius: 25px;
+    background-color:#EA942D;
+    color:#fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: .5px;
+    position: relative;
+    right: 180px;
+    font-family: sans-serif;
     font-weight: bold;
+    padding: 10px;
+
+    margin-top: 110px;
 }
-.small{
-    font-size: 16px;
-    text-transform: uppercase;
-    color:#929295;
-    font-weight: lighter;
+.main button:active{
+    background-color:#E27E1B;
 }
+.group{
+    clear: both;
+    text-align: right;
+}
+
+label{
+    float:left;
+}
+.wrapper{
+    float: left;
+}
+form{
+    position: relative;
+    left:300px;
+    top:100px;
+}
+
+
 footer{
     position: relative;
     top:495px;
     background-color: #20314F;
     height: 380px;
     clear: both;
+
 }
 .footer-logo{
     border-radius: 15%;
@@ -396,3 +352,4 @@ footer{
     position: fixed;
     z-index: 101;
 }
+

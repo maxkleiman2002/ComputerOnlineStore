@@ -18,6 +18,7 @@ if(!empty($_GET["action"])) {
     }
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,6 +100,7 @@ if(!empty($_GET["action"])) {
                                 <td><a href="cart_page.php?page=cart&remove=<?=$item['id']?>" class="remove">Remove</a></td>
 
 
+
                             </tr>
                         <?php endif; ?>
                         <?php if($item['category'] == 2):?>
@@ -108,6 +110,8 @@ if(!empty($_GET["action"])) {
                                 <td class="td-price"><?=$item['price'] ?></td>
                                 <td class="td-city"><?=$item['qty'] ?></td>
                                 <td><a href="cart_page.php?page=cart&remove=<?=$item['id']?>" class="remove">Remove</a></td>
+
+
 
                             </tr>
                         <?php endif; ?>
