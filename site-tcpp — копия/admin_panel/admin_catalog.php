@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once '../vendor/signin.php';
 require_once '../inc/funcs.php';
 
 
@@ -32,6 +31,7 @@ if(!empty($_GET["action"])) {
     <title>Каталог</title>
     <link rel="stylesheet" href="catalog.css">
     <script defer src = ../assets/popups.js></script>
+    <script defer src = ../assets/popups2.js></script>
 </head>
 <body>
 <div class="wrapp">
@@ -99,7 +99,7 @@ if(!empty($_GET["action"])) {
             <td class="old_price-td"><?=$product['old_price'] ?></td>
             <td class="hit-td"><?=$product['hit'] ?></td>
             <td class="sale-td"><?=$product['sale'] ?></td>
-            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup2">Редагувати</a> </button></td>
+            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup2" class="popup-link">Редагувати</a> </button></td>
             <td class="delete-td"><button type="button" class="remove-button"> <a href="admin_catalog.php?action=remove&id=<?php echo $product["id"]; ?>">Видалити</a> </button></td>
         </tr>
         <?php endforeach;?>
@@ -111,7 +111,7 @@ if(!empty($_GET["action"])) {
 <div class="popup" id="popup">
     <div class="popup_body">
         <div class="popup-content">
-            <a href="#" class="popup_close close-popup"><img src="../close.png" alt="close_Icon"/> </a>
+            <a href="#" class="popup_close close-popup"><img src="../close1.png" alt="close_Icon" width="50" height="50"/> </a>
             <div class="popup-title">
                 Додавання товару
             </div>
@@ -132,28 +132,35 @@ if(!empty($_GET["action"])) {
                     </div>
                     <div class="group">
                         <label for="price">Ціна: </label>
-                        <textarea  name="price" id="price"></textarea>
+                        <input type="text"  name="price" id="price">
                     </div>
                     <div class="group">
                         <label for="old_price">Стара ціна: </label>
-                        <textarea  name="old_price" id="old_price"></textarea>
+                        <input type="text"  name="old_price" id="old_price">
+                    </div>
+                    <div class="group">
+                        <label for="img">Зображення: </label>
+                        <input type="file"  name="img" id="img">
                     </div>
                     <div class="group">
                         <label for="category">Тип товару: </label>
-                        <input type="radio" id="category" name="category" value="1">Комп'ютери та ноутбуки<br>
-                        <input type="radio" id="category" name="category" value="3">Смартфони,ТБ,Електроніка<br>
-                        <input type="radio" id="category" name="category" value="2">Комп'ютерні комплектуючі<br>
-                        <input type="radio" id="category" name="category" value="4">Товари для геймерів<br>
+                        <br>
+                        <input type="radio" id="category" name="category" value="1"><span class="cat_span"> Комп'ютери та ноутбуки</span><br>
+                        <input type="radio" id="category2" name="category" value="3"><span class="cat_span">Смартфони,ТБ,Електроніка</span><br>
+                        <input type="radio" id="category3" name="category" value="2"><span class="cat_span">Комп'ютерні комплектуючі</span><br>
+                        <input type="radio" id="category4" name="category" value="4"><span class="cat_span">Товари для геймерів</span><br>
                     </div>
                     <div class="group">
                         <label for="hit">Хіт: </label>
-                        <input type="radio" name="hit" id="hit" value="0"><br>
-                        <input type="radio" name="hit" id="hit" value="1">
+                        <br>
+                        <input type="radio" name="hit" id="hit" value="0"><span class="true">Так</span><br>
+                        <input type="radio" name="hit" id="hit2" value="1"><span class="false">Ні</span><br>
                     </div>
                     <div class="group">
                         <label for="sale">Знижка: </label>
-                        <input type="radio" name="sale" id="sale" value="0"><br>
-                        <input type="radio" name="sale" id="sale" value="1">
+                        <br>
+                        <input type="radio" name="sale" id="sale" value="0"><span class="true">Так</span><br>
+                        <input type="radio" name="sale" id="sale2" value="1"><span class="false">Ні</span><br>
                     </div>
                     <button type="submit" class="add_button close-popup">Додати товар</button>
                 </div>
@@ -162,6 +169,68 @@ if(!empty($_GET["action"])) {
         </div>
     </div>
 </div>
+
+    <div class="popup2" id="popup2">
+        <div class="popup_body">
+            <div class="popup-content">
+                <a href="#" class="popup_close close-popup"><img src="../close1.png" alt="close_Icon" width="50" height="50"/> </a>
+                <div class="popup-title">
+                    Редагування товару
+                </div>
+                <div class="add-item">
+                    <form action="" method="post">
+                        <div class="wrapper">
+                            <div class="group">
+                                <label for="title">Назва: </label>
+                                <input type="text" name="title" id="title"/>
+                            </div>
+                            <div class="group">
+                                <label for="article">Артикул: </label>
+                                <input type="text" name="article" id="article"/>
+                            </div>
+                            <div class="group">
+                                <label for="description">Опис товару: </label>
+                                <textarea  name="description" id="description"></textarea>
+                            </div>
+                            <div class="group">
+                                <label for="price">Ціна: </label>
+                                <input type="text"  name="price" id="price">
+                            </div>
+                            <div class="group">
+                                <label for="old_price">Стара ціна: </label>
+                                <input type="text"  name="old_price" id="old_price">
+                            </div>
+                            <div class="group">
+                                <label for="img">Зображення: </label>
+                                <input type="file"  name="img" id="img">
+                            </div>
+                            <div class="group">
+                                <label for="category">Тип товару: </label>
+                                <br>
+                                <input type="radio" id="category" name="category" value="1"><span class="cat_span"> Комп'ютери та ноутбуки</span><br>
+                                <input type="radio" id="category2" name="category" value="3"><span class="cat_span">Смартфони,ТБ,Електроніка</span><br>
+                                <input type="radio" id="category3" name="category" value="2"><span class="cat_span">Комп'ютерні комплектуючі</span><br>
+                                <input type="radio" id="category4" name="category" value="4"><span class="cat_span">Товари для геймерів</span><br>
+                            </div>
+                            <div class="group">
+                                <label for="hit">Хіт: </label>
+                                <br>
+                                <input type="radio" name="hit" id="hit" value="0"><span class="true">Так</span><br>
+                                <input type="radio" name="hit" id="hit2" value="1"><span class="false">Ні</span><br>
+                            </div>
+                            <div class="group">
+                                <label for="sale">Знижка: </label>
+                                <br>
+                                <input type="radio" name="sale" id="sale" value="0"><span class="true">Так</span><br>
+                                <input type="radio" name="sale" id="sale2" value="1"><span class="false">Ні</span><br>
+                            </div>
+                            <button type="submit" class="add_button close-popup">Редагувати товар</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <footer>
 

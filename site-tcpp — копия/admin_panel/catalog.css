@@ -327,6 +327,7 @@ footer{
     overflow-y: auto;
     overflow-x: hidden;
     transition: all 0.8s ease 0s;
+    border-radius: 10px;
 }
 .popup.open{
     opacity: 1;
@@ -336,27 +337,41 @@ footer{
     transform: perspective(600px) translate(0px,0px) rotateX(0deg);
     opacity: 1;
 }
+.popup2.open{
+    opacity: 1;
+    visibility: visible;
+}
+.popup2.open .popup-content{
+    transform: perspective(600px) translate(0px,0px) rotateX(0deg);
+    opacity: 1;
+}
 .popup_body{
     min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 30px 10px;
+
 }
 .popup-content{
-    background-color: #fff;
-    color: black;
+    font-size: 24px;
+    background-color: #74acf5;
+    color: #ffffff;
     max-width: 900px;
+    width: 800px;
+
     padding: 30px;
     position: relative;
     transition: all 0.8s ease 0s;
     transform: perspective(600px) translate(0px,-100%) rotateX(45deg);
     opacity: 0;
+
 }
 .popup-title{
     font-size: 40px;
     margin: 0 0 1em 0;
-
+    text-align: center;
+    font-weight: bolder;
 }
 .popup-link:active{
     color: black;
@@ -368,4 +383,91 @@ footer{
 }
 body.lock{
     overflow: hidden;
+}
+.group{
+    clear: both;
+    text-align: right;
+    margin-top: 15px;
+    position: relative;
+    left:35%;
+}
+label{
+    float: left;
+}
+.wrapper{
+    float:left;
+}
+
+input[type=text],textarea{
+    font-size: 24px;
+    position: relative;
+    left:40px;
+    width: 300px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+
+}
+.cat_span{
+    position: relative;
+    right: 160px;
+    font-size: 18px;
+}
+
+#category{
+    position: relative;
+    left:120px;
+
+}
+#category2{
+    position: relative;
+    left:140px;
+}
+#category3{
+    position: relative;
+    left:135px;
+}
+#category4{
+    position: relative;
+    left:82px;
+}
+.true,.false{
+    position: relative;
+    right: 360px;
+    font-size: 18px;
+}
+
+#hit{
+    position: relative;
+    right: 280px;
+}
+#hit2{
+    position: relative;
+    right: 292px;
+}
+#sale{
+    position: relative;
+    right: 280px;
+}
+#sale2{
+    position: relative;
+    right: 292px;
+}
+button[type=submit]{
+    color: #fff;
+    border: 2px solid #fff;
+    margin-left: 300px;
+    width: 180px;
+    height: 55px;
+    border-radius: 25px;
+    background-color: rgb(254,65,65);
+    outline: none;
+    font-size: 20px;
+    letter-spacing: .5px;
+    position: relative;
+    bottom: 5px;
+    margin-top: 50px;
+}
+button[type=submit]:active{
+    background-color: rgb(252, 13, 13);
 }
