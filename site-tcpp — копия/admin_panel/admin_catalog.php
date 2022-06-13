@@ -116,7 +116,7 @@ if(!empty($_GET["action"])) {
                 Додавання товару
             </div>
             <div class="add-item">
-            <form action="admin_catalog.php" method="POST">
+            <form action="check_add.php" method="post">
                 <div class="wrapper">
                     <div class="group">
                         <label for="title">Назва: </label>
@@ -134,7 +134,6 @@ if(!empty($_GET["action"])) {
                         <label for="price">Ціна: </label>
                         <input type="text"  name="price" id="price">
                     </div>
-
                     <div class="group">
                         <label for="old_price">Стара ціна: </label>
                         <input type="text"  name="old_price" id="old_price">
@@ -179,7 +178,7 @@ if(!empty($_GET["action"])) {
                     Редагування товару
                 </div>
                 <div class="pop_edit_text">
-                    <form action="admin_catalog.php" method="POST">
+                    <form action="" method="post">
                         <div class="wrapper">
                             <div class="group">
                                 <label for="title">Назва: </label>
@@ -197,9 +196,8 @@ if(!empty($_GET["action"])) {
                                 <label for="price">Ціна: </label>
                                 <input type="text"  name="price" id="price">
                             </div>
-                            
                             <div class="group">
-                                <label for="old_price">Cтара ціна: </label>
+                                <label for="old_price">Стара ціна: </label>
                                 <input type="text"  name="old_price" id="old_price">
                             </div>
                             <div class="group">
