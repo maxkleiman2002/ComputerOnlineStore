@@ -1,13 +1,13 @@
-const popupLinks = document.querySelectorAll('.popup-link');
-const body1 = document.querySelector('body');
-const lockPadding = document.querySelectorAll(".lock-padding");
+const popupLinks2 = document.querySelectorAll('.popup-link2');
+const body2 = document.querySelector('body');
+const lockPadding2 = document.querySelectorAll(".lock-padding");
 
-let unlock = true;
-const timeout = 800;
+let unlock2 = true;
+const timeout2 = 800;
 
-if(popupLinks.length > 0){
-    for(let i = 0; i<popupLinks.length;i++){
-        const popupLink = popupLinks[i];
+if(popupLinks2.length > 0){
+    for(let i = 0; i<popupLinks2.length;i++){
+        const popupLink = popupLinks2[i];
         popupLink.addEventListener("click",function (e){
             const popupName = popupLink.getAttribute("href").replace("#","");
             const currentPopup = document.getElementById(popupName);
@@ -17,10 +17,10 @@ if(popupLinks.length > 0){
         });
     }
 }
-const popupCloseIcon = document.querySelectorAll('.close-popup');
-if(popupCloseIcon.length > 0){
-    for(let i = 0; i < popupCloseIcon.length;i++){
-        const el = popupCloseIcon[i];
+const popupCloseIcon2 = document.querySelectorAll('.close-popup2');
+if(popupCloseIcon2.length > 0){
+    for(let i = 0; i < popupCloseIcon2.length;i++){
+        const el = popupCloseIcon2[i];
         el.addEventListener('click',function (e){
             popupClose(el.closest('.popup2'));
             e.preventDefault();
@@ -29,7 +29,7 @@ if(popupCloseIcon.length > 0){
 }
 
 function popupOpen(currentPopup){
-    if(currentPopup && unlock){
+    if(currentPopup && unlock2){
         const popupActive = document.querySelector('.popup2.open');
         if(popupActive){
             popupClose(popupActive,false);
@@ -39,7 +39,7 @@ function popupOpen(currentPopup){
         }
         currentPopup.classList.add('open');
         currentPopup.addEventListener('click',function (e){
-            if(!e.target.closest('.popup-content')){
+            if(!e.target.closest('.popup-content2')){
                 popupClose(e.target.closest('.popup2'));
             }
         });
@@ -48,23 +48,23 @@ function popupOpen(currentPopup){
 
 function bodyLock(){
     const lockPaddingValue = window.innerWidth - document.querySelector('.wrapp').offsetWidth + 'px';
-    if(lockPadding.length > 0) {
-        for (let i = 0; i < lockPadding.length; i++) {
-            const el = lockPadding[i];
+    if(lockPadding2.length > 0) {
+        for (let i = 0; i < lockPadding2.length; i++) {
+            const el = lockPadding2[i];
             el.style.paddingRight = lockPaddingValue;
         }
     }
-    body1.style.paddingRight = lockPaddingValue;
-    body1.classList.add('lock');
+    body2.style.paddingRight = lockPaddingValue;
+    body2.classList.add('lock');
 
-    unlock = false;
+    unlock2 = false;
     setTimeout(function (){
-        unlock = true;
-    },timeout);
+        unlock2= true;
+    },timeout2);
 }
 
 function popupClose(popupActive,doUnlock = true){
-    if(unlock){
+    if(unlock2){
         popupActive.classList.remove('open');
         if(doUnlock){
             bodyUnLock();
@@ -74,20 +74,20 @@ function popupClose(popupActive,doUnlock = true){
 
 function bodyUnLock(){
     setTimeout(function (){
-        if(lockPadding.length > 0) {
-            for (let i = 0; i < lockPadding.length; i++) {
-                const el = lockPadding[i];
+        if(lockPadding2.length > 0) {
+            for (let i = 0; i < lockPadding2.length; i++) {
+                const el = lockPadding2[i];
                 el.style.paddingRight = '0px';
             }
         }
-        body1.style.paddingRight = '0px';
-        body1.classList.remove('lock');
-    },timeout);
+        body2.style.paddingRight = '0px';
+        body2.classList.remove('lock');
+    },timeout2);
 
-    unlock = false;
+    unlock2 = false;
     setTimeout(function (){
-        unlock = true;
-    },timeout);
+        unlock2 = true;
+    },timeout2);
 }
 document.addEventListener('keydown',function (e){
     if(e.which === 27){

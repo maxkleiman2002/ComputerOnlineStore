@@ -99,7 +99,7 @@ if(!empty($_GET["action"])) {
             <td class="old_price-td"><?=$product['old_price'] ?></td>
             <td class="hit-td"><?=$product['hit'] ?></td>
             <td class="sale-td"><?=$product['sale'] ?></td>
-            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup2" class="popup-link">Редагувати</a> </button></td>
+            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup_edit" >Редагувати</a> </button></td>
             <td class="delete-td"><button type="button" class="remove-button"> <a href="admin_catalog.php?action=remove&id=<?php echo $product["id"]; ?>">Видалити</a> </button></td>
         </tr>
         <?php endforeach;?>
@@ -162,7 +162,7 @@ if(!empty($_GET["action"])) {
                         <input type="radio" name="sale" id="sale" value="0"><span class="true">Так</span><br>
                         <input type="radio" name="sale" id="sale2" value="1"><span class="false">Ні</span><br>
                     </div>
-                    <button type="submit" class="add_button close-popup">Додати товар</button>
+                    <button type="submit" class="add_button">Додати товар</button>
                 </div>
             </form>
             </div>
@@ -170,14 +170,14 @@ if(!empty($_GET["action"])) {
     </div>
 </div>
 
-    <div class="popup2" id="popup2">
-        <div class="popup_body">
-            <div class="popup-content">
-                <a href="#" class="popup_close close-popup"><img src="../close1.png" alt="close_Icon" width="50" height="50"/> </a>
-                <div class="popup-title">
+<div class="popup_edit" id="popup_edit">
+        <div class="popup_edit_body">
+            <div class="popup_edit-content">
+                <a href="##" class="popup_close_edit"><img src="../close1.png" alt="close_Icon" width="50" height="50"/> </a>
+                <div class="popup_edit-title">
                     Редагування товару
                 </div>
-                <div class="add-item">
+                <div class="pop_edit_text">
                     <form action="" method="post">
                         <div class="wrapper">
                             <div class="group">
@@ -224,7 +224,7 @@ if(!empty($_GET["action"])) {
                                 <input type="radio" name="sale" id="sale" value="0"><span class="true">Так</span><br>
                                 <input type="radio" name="sale" id="sale2" value="1"><span class="false">Ні</span><br>
                             </div>
-                            <button type="submit" class="add_button close-popup">Редагувати товар</button>
+                            <button type="submit" class="add_button">Редагувати товар</button>
                         </div>
                     </form>
                 </div>
