@@ -4,6 +4,7 @@
 }
 html,body{
     height: 100%;
+    overflow-x: hidden;
 }
 
 .logo-text{
@@ -19,6 +20,7 @@ html,body{
 body{
     font-family: "Lucida Sans Unicode";
     font-size:22px;
+
 
 }
 
@@ -104,9 +106,9 @@ nav p {
     font-weight: bold;
 
 }
-.no-cart{
+.no-cart img{
     position: relative;
-    left: 550px;
+    right: 850px;
 }
 .mini-count{
     position: relative;
@@ -282,6 +284,7 @@ footer{
     top:495px;
     background-color: #20314F;
     height: 380px;
+
     clear: both;
 }
 .footer-logo{

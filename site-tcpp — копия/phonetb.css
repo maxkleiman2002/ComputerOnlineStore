@@ -5,6 +5,7 @@
 }
 html,body{
     height: 100%;
+    overflow-x: hidden;
 }
 
 .logo-text{
@@ -239,6 +240,7 @@ footer{
     top:200px;
     background-color: #20314F;
     height: 380px;
+    width: 100%;
 }
 .footer-logo{
     border-radius: 15%;

@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Доставка</title>
-    <link rel="stylesheet" href="delivery1.css">
+    <link rel="stylesheet" href="delivery2.css">
 </head>
 <body>
 <header>

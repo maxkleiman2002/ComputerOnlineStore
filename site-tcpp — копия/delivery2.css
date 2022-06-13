@@ -73,7 +73,9 @@ li{
     font-weight: bold;
 
 }
-
+.main{
+    clear: both;
+}
 
 .text{
     position: relative;
@@ -89,7 +91,7 @@ li{
 }
 .im{
     position: relative;
-    left: 370px;
+    left: 350px;
     top:250px;
 }
 .det,.icc{

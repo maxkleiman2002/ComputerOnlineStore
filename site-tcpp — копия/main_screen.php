@@ -1,5 +1,6 @@
 <?php
 ini_set('display_errors', 'Off');
+
 session_start();
     require_once 'vendor/signin.php';
 ?>
@@ -11,11 +12,11 @@ session_start();
     <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Головна сторінка</title>
-    <link rel="stylesheet" href="main_screen1.css">
+    <link rel="stylesheet" href="main_screen.css">
 </head>
 <body>
 <header>
-    <div clas="logo">
+    <div class="logo">
         <div class="elips_logo">
             <p>CF</p>
         </div>
@@ -28,7 +29,7 @@ session_start();
     </div>
 
     <nav>
-        <ul>
+        <ul class="f1">
             <li><a href="main_screen.php">Головна</a></li>
             <li><a href="delivety.php">Доставка</a></li>
             <li><a href="payment.php">Оплата</a></li>
@@ -37,6 +38,7 @@ session_start();
             if($_SESSION['user']) {
 
                 echo ' <li ><a href = "vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+
             }
             else{
                 echo ' <li ><a href = "authorization.php" ><button class="auth_but" > Вхід</button ></a ></li >';

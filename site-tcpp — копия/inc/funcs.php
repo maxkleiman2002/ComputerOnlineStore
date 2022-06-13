@@ -18,6 +18,12 @@ function get_products(): array
    return $res->fetchAll();
 
 }
+function delete_product($id)
+{
+    global $pdo;
+    $pdo->query("DELETE FROM compshop.products WHERE id = $id");
+
+}
 //function get_product(int $id)
 function get_product(int $id): array|false
 {

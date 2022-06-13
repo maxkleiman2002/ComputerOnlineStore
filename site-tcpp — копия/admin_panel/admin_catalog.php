@@ -1,6 +1,26 @@
 <?php
 session_start();
 require_once '../vendor/signin.php';
+require_once '../inc/funcs.php';
+
+
+$products = get_products();
+
+if(!empty($_GET["action"])) {
+    switch($_GET["action"]) {
+
+        case "remove":
+
+            $id = $_GET["id"];
+
+            delete_product($id);
+            break;
+        case "edit":
+            unset($_SESSION["cart_item"]);
+            break;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +31,12 @@ require_once '../vendor/signin.php';
     <meta charset="utf-8">
     <title>Каталог</title>
     <link rel="stylesheet" href="catalog.css">
+    <script defer src = ../assets/popups.js></script>
 </head>
 <body>
-
+<div class="wrapp">
 <header>
+
     <div class="logo">
         <div class="elips_logo">
             <p>CF</p>
@@ -46,33 +68,101 @@ require_once '../vendor/signin.php';
 
 <div class="main">
 <h1>Каталог товарів</h1>
-    <button class="add_item"><a href="">Додати товар</a></button>
-    <table>
+
+    <button type="button" class="add_item"> <a href="#popup" class="popup-link">Додати товар</a></button>
+    <table width="700">
         <tr>
             <th class="id-th">ID</th>
-            <th class="img-th">Зображення</th>
-            <th class="article-th">Артикул</th>
             <th class="name-th">Назва</th>
+            <th class="article-th">Артикул</th>
+
             <th class="description-th">Опис <br>товару</th>
             <th class="price-th">Ціна</th>
             <th class="type-th">Тип <br>товару</th>
-            <th class="edit-th"></th>
+            <th class="description-th">Стара ціна</th>
+            <th class="price-th">Хіт</th>
+            <th class="type-th">Знижка</th>
+            <th class="edit-th"> </th>
             <th class="remove-th"></th>
         </tr>
+        <?php if(!empty($products)): ?>
+        <?php foreach($products as  $product): ?>
         <tr>
-            <td>1</td>
-            <td><img src="https://content.rozetka.com.ua/goods/images/big/172476912.jpg" width="150" height="150"/></td>
-            <td class="article-td">1478-9</td>
-            <td class="name-td">Компьютер</td>
-            <td class="description-td">для дома</td>
-            <td class="price-td">15000</td>
-            <td class="type-td">Комп`ютери та ноутбуки</td>
-            <td class="edit-td"><a href="">Редактувати</a> </td>
-            <td class="edit-td"><a href="">Видалити</a> </td>
+
+            <td class="id-td"><?=$product['id'] ?></td>
+            <td class="name-td"><?=$product['title'] ?></td>
+            <td class="article-td"><?=$product['slug'] ?></td>
+
+            <td class="description-td"><?=$product['content'] ?></td>
+            <td class="price-td"><?=$product['price'] ?></td>
+            <td class="type-td"><?=$product['category'] ?></td>
+            <td class="old_price-td"><?=$product['old_price'] ?></td>
+            <td class="hit-td"><?=$product['hit'] ?></td>
+            <td class="sale-td"><?=$product['sale'] ?></td>
+            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup2">Редагувати</a> </button></td>
+            <td class="delete-td"><button type="button" class="remove-button"> <a href="admin_catalog.php?action=remove&id=<?php echo $product["id"]; ?>">Видалити</a> </button></td>
         </tr>
+        <?php endforeach;?>
+        <?php endif;?>
     </table>
 
 </div>
+
+<div class="popup" id="popup">
+    <div class="popup_body">
+        <div class="popup-content">
+            <a href="#" class="popup_close close-popup"><img src="../close.png" alt="close_Icon"/> </a>
+            <div class="popup-title">
+                Додавання товару
+            </div>
+            <div class="add-item">
+            <form action="" method="post">
+                <div class="wrapper">
+                    <div class="group">
+                        <label for="title">Назва: </label>
+                        <input type="text" name="title" id="title"/>
+                    </div>
+                    <div class="group">
+                        <label for="article">Артикул: </label>
+                        <input type="text" name="article" id="article"/>
+                    </div>
+                    <div class="group">
+                        <label for="description">Опис товару: </label>
+                        <textarea  name="description" id="description"></textarea>
+                    </div>
+                    <div class="group">
+                        <label for="price">Ціна: </label>
+                        <textarea  name="price" id="price"></textarea>
+                    </div>
+                    <div class="group">
+                        <label for="old_price">Стара ціна: </label>
+                        <textarea  name="old_price" id="old_price"></textarea>
+                    </div>
+                    <div class="group">
+                        <label for="category">Тип товару: </label>
+                        <input type="radio" id="category" name="category" value="1">Комп'ютери та ноутбуки<br>
+                        <input type="radio" id="category" name="category" value="3">Смартфони,ТБ,Електроніка<br>
+                        <input type="radio" id="category" name="category" value="2">Комп'ютерні комплектуючі<br>
+                        <input type="radio" id="category" name="category" value="4">Товари для геймерів<br>
+                    </div>
+                    <div class="group">
+                        <label for="hit">Хіт: </label>
+                        <input type="radio" name="hit" id="hit" value="0"><br>
+                        <input type="radio" name="hit" id="hit" value="1">
+                    </div>
+                    <div class="group">
+                        <label for="sale">Знижка: </label>
+                        <input type="radio" name="sale" id="sale" value="0"><br>
+                        <input type="radio" name="sale" id="sale" value="1">
+                    </div>
+                    <button type="submit" class="add_button close-popup">Додати товар</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer>
 
     <div class="logo-wrapper">
@@ -117,6 +207,8 @@ require_once '../vendor/signin.php';
     </div>
 
 </footer>
+</div>
+
 
 </body>
 </html>

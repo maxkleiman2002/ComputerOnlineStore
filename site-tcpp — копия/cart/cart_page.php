@@ -27,7 +27,7 @@ if(!empty($_GET["action"])) {
     <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Корзина</title>
-    <link rel="stylesheet" href="cart_page.css">
+    <link rel="stylesheet" href="cart_page1.css">
 
 </head>
 <body>
