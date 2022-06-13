@@ -24,6 +24,9 @@ function delete_product($id)
     $pdo->query("DELETE FROM compshop.products WHERE id = $id");
 
 }
+function add_product($title,$slug,$content,$img,$price,$old_price,$hit,$sale,$category){
+
+}
 //function get_product(int $id)
 function get_product(int $id): array|false
 {
