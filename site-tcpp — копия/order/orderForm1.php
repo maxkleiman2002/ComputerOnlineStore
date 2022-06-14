@@ -68,16 +68,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 //    ];
 //    var_dump($cartArray);
 
-    $title = json_encode($_SESSION['cart_title']);
-    print_r(json_decode($title));
-
-    mysqli_select_db($con, "compshop");
-    mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category)
-    VALUES ('" . json_encode($_SESSION['cart_title']) . "', '" . json_encode($_SESSION['cart_price']) . "', '" . json_encode($_SESSION['cart_qty']). "','" . json_encode($_SESSION['cart_category']) . "')");
-    mysqli_close($con);
+//    $title = json_encode($_SESSION['cart_title']);
+//    print_r(json_decode($title));
+//
+//    mysqli_select_db($con, "compshop");
+//    mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category)
+//    VALUES ('" . json_encode($_SESSION['cart_title']) . "', '" . json_encode($_SESSION['cart_price']) . "', '" . json_encode($_SESSION['cart_qty']). "','" . json_encode($_SESSION['cart_category']) . "')");
+//    mysqli_close($con);
 }
 
-
+$_SESSION['total_sum'] = $_POST['sum'];
+$_SESSION['total_qty'] = $_POST['qty_total'];
 
 
 

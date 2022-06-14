@@ -22,6 +22,8 @@ if(!empty($_GET["action"])) {
 }
 
 
+print_r($_SESSION['cart.sum']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -191,6 +193,8 @@ if(!empty($_GET["action"])) {
             <p class="t2"><span class="small"> ДОСТАВКА:</span> <span class="big">78 грн.</span> </p>
             <hr color="DBDBDC">
             <p class="t3"><span class="big2"> РАЗОМ: </span><span class="order-sum"><?=$_SESSION['cart.sum'] + 78  ?> грн.</span> </p>
+            <input type="hidden" name="sum" value="<?=$_SESSION['cart.sum'] + 78  ?>">
+            <input type="hidden" name="qty_total" value="<?=$_SESSION['cart.qty'] ?>">
         <?php else:?>
 
         <?php endif; ?>

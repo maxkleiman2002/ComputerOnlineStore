@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 ini_set('display_errors', 'Off');
 require_once '../inc/connect.php';
 require_once '../inc/funcs.php';
@@ -41,7 +42,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_select_db($con, "compshop");
     mysqli_query($con, "INSERT orders (email, number, post, payment_method, paid_amount,name, surname, patronymic, date) 
     VALUES ('" . $email . "', '" . $phone . "','" . $post . "', '" . $payment_method. "','" . $grand_total. "','" . $name . "','" . $surname . "','" . $patronymic. "','" . $date . "')");
+
+    mysqli_select_db($con, "compshop");
+    mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category)
+    VALUES ('" . json_encode($_SESSION['cart_title']) . "', '" . json_encode($_SESSION['cart_price']) . "', '" . json_encode($_SESSION['cart_qty']). "','" . json_encode($_SESSION['cart_category']) . "')");
+
+
+    mysqli_select_db($con, "compshop");
+     mysqli_query($con, "INSERT ordersdetail (price,quantity)
+    VALUES ('" . $_SESSION['total_sum'] . "', '" . $_SESSION['total_qty'] . "')");
+    mysqli_close($con);
 }
+
 
 
 ?>
@@ -56,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title>Підтвердження замовлення</title>
+    <title>Дякую за покупку!</title>
     <link rel="stylesheet" href="checkout.css">
 
 </head>
@@ -111,7 +123,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="head">
         <hr color="DBDBDC">
-        <h1>Ваше замовлення підтверджено</h1>
+        <h1>Дякую за покупку!</h1>
     </div>
     <div class="content">
         <form>
