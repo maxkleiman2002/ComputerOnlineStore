@@ -122,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="group">
                 <label for="phone">Ваш телефон: </label>
-                <input type="text" name="phone" id="phone" value="0<?=$phone?>">
+                <input type="text" name="phone" id="phone" value="<?=$phone?>">
             </div>
             <div class="group">
                 <label for="city">Місто: </label>

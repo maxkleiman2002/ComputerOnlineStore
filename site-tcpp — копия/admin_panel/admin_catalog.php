@@ -1,12 +1,15 @@
 <?php
 session_start();
 require_once '../inc/funcs.php';
-
+$dbHost = "localhost";
+$dbXeHost="localhost/XE";
+$dbUsername="root";
+$dbPassword = "";
 
 $products = get_products();
 
 if(!empty($_GET["action"])) {
-    switch($_GET["action"]) {
+    switch ($_GET["action"]) {
 
         case "remove":
 
@@ -15,8 +18,13 @@ if(!empty($_GET["action"])) {
             delete_product($id);
             break;
         case "edit":
-            unset($_SESSION["cart_item"]);
-            break;
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $id2 = $_GET["id"];
+
+
+
+
+            }
     }
 }
 
@@ -56,7 +64,7 @@ if(!empty($_GET["action"])) {
             <li><a href="../payment.php">Оплата</a></li>
             <li><a href="../contacts.php">Контакти</a></li>
             <li><a href="../authorization.php"><button class="auth_but">Вхід</button></a></li>
-            <li><a href="../cart/cart_page.php" id="#get-cart"><img src="../cart.svg"></a></li>
+            <li><a href="../cart/cart_page.php" id="#get-cart"><img alt="Корзина" src="../cart.svg"></a></li>
 
             <li><div class="count-cart">
                     <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
@@ -87,7 +95,7 @@ if(!empty($_GET["action"])) {
         </tr>
         <?php if(!empty($products)): ?>
         <?php foreach($products as  $product): ?>
-        <tr>
+        <tr data-user-id="<?=$product['id'] ?>">
 
             <td class="id-td"><?=$product['id'] ?></td>
             <td class="name-td"><?=$product['title'] ?></td>
@@ -99,8 +107,10 @@ if(!empty($_GET["action"])) {
             <td class="old_price-td"><?=$product['old_price'] ?></td>
             <td class="hit-td"><?=$product['hit'] ?></td>
             <td class="sale-td"><?=$product['sale'] ?></td>
-            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup_edit" class="popup-link-edit">Редагувати</a> </button></td>
+
+            <td class="edit-td"><button type="button" class="edit-button"><a href="#popup_edit" class="popup-link-edit" id="popup-link-edit">Редагувати</a> </button></td>
             <td class="delete-td"><button type="button" class="remove-button"> <a href="admin_catalog.php?action=remove&id=<?php echo $product["id"]; ?>">Видалити</a> </button></td>
+
         </tr>
         <?php endforeach;?>
         <?php endif;?>
@@ -162,7 +172,7 @@ if(!empty($_GET["action"])) {
                         <input type="radio" name="sale" id="sale" value="0"><span class="true">Так</span><br>
                         <input type="radio" name="sale" id="sale2" value="1"><span class="false">Ні</span><br>
                     </div>
-                    <button type="submit" class="add_button">Додати товар</button>
+                    <button type="submit" class="add_button_popup">Додати товар</button>
                 </div>
             </form>
             </div>
@@ -173,13 +183,18 @@ if(!empty($_GET["action"])) {
 <div class="popup_edit" id="popup_edit">
         <div class="popup_edit_body">
             <div class="popup_edit-content">
-                <a href="##" class="popup_close_edit"><img src="../close1.png" alt="close_Icon" width="50" height="50"/> </a>
+                <a href="#" class="popup_close_edit"><img src="../close1.png" alt="close_Icon" width="50" height="50"/> </a>
+
+
+
+
                 <div class="popup_edit-title">
                     Редагування товару
                 </div>
                 <div class="pop_edit_text">
-                    <form action="" method="post">
+                    <form action="check_update.php" method="POST">
                         <div class="wrapper">
+                            <input type="hidden" name="productId" id="uid" class="productId">
                             <div class="group">
                                 <label for="title">Назва: </label>
                                 <input type="text" name="title" id="title"/>
@@ -223,8 +238,10 @@ if(!empty($_GET["action"])) {
                                 <br>
                                 <input type="radio" name="sale" id="sale" value="0"><span class="true">Так</span><br>
                                 <input type="radio" name="sale" id="sale2" value="1"><span class="false">Ні</span><br>
+
+
                             </div>
-                            <button type="submit" class="add_button">Редагувати товар</button>
+                            <button type="submit" class="ed_button_popup" id="save">Редагувати товар</button>
                         </div>
                     </form>
                 </div>
@@ -277,7 +294,23 @@ if(!empty($_GET["action"])) {
 
 </footer>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    let $editRow = null;
+    $('.popup-link-edit').click(function (e){
+        $editRow = $(this).closest("tr");
 
+        $(".id-td").val($editRow.data("user-id"));
+
+    });
+    $("#save").click(function() {
+        $editRow.find(".productId").text($(".id-td").val());
+        var productId = $('.productId').val();
+        console.log(productId);
+    });
+
+
+</script>
 
 </body>
 </html>

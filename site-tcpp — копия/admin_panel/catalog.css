@@ -446,7 +446,7 @@ input[type=text],textarea{
     position: relative;
     right: 292px;
 }
-button[type=submit]{
+.add_button_popup,.ed_button_popup{
     color: #fff;
     border: 2px solid #fff;
     margin-left: 300px;
@@ -462,7 +462,7 @@ button[type=submit]{
     margin-top: 50px;
 
 }
-button[type=submit]:active{
+.add_button_popup,.ed_button_popup:active{
     background-color: rgb(252, 13, 13);
 }
 

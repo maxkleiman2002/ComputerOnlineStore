@@ -11,6 +11,11 @@ $all_items = "";
 $items = array();
 
 
+$stack_title = [];
+$stack_img = [];
+$stack_category = [];
+$stack_price = [];
+$stack_qty = [];
 
 
 $dbHost = "localhost";
@@ -38,9 +43,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $img = mysqli_real_escape_string($con,$_POST['img']);
     $sum_qty = mysqli_real_escape_string($con,$_SESSION['cart.qty']);
     $sum_price = mysqli_real_escape_string($con, $_POST['cart.sum']);
+
+
+    array_push($stack_title, $title);
+    array_push($stack_img, $img);
+    array_push($stack_price, $price);
+    array_push($stack_category, $category);
+    array_push($stack_qty, $qty);
+
+    print_r($stack_title);
+    print_r($stack_img);
+    print_r($stack_price);
+    print_r($stack_category);
+    print_r($stack_qty);
+
+
+
+//    $cartArray = [
+//            "title" => $title,
+//            "category" => $category,
+//            "price"=> $price,
+//    ];
+//    var_dump($cartArray);
+
+
+
     mysqli_select_db($con, "compshop");
-    mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category) 
-    VALUES ('" . $title . "', '" . $price . "', '" . $qty. "','" . $category . "')");
+//    mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category)
+//    VALUES ('" . $title . "', '" . $price . "', '" . $qty. "','" . $category . "')");
     mysqli_close($con);
 }
 
