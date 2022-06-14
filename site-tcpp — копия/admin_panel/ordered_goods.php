@@ -6,6 +6,7 @@
     $ordersDetail = get_orders_detail();
     $order_products = get_cart_order();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta charset="utf-8">
     <title>Замовлені товари</title>
-    <link rel="stylesheet" href="ordered_goods1.css">
+    <link rel="stylesheet" href="ordered_goods2.css">
 </head>
 <body>
 
@@ -51,44 +52,62 @@
 <div class="main">
     <h1>Замовлені товари</h1>
 </div>
+<div class="page-list" align="center">
 
-<table width="500">
+</div>
+<table class="tbl1" width="500">
     <tr>
-        <th>ID</th>
-        <th>Ім'я</th>
-        <th>Прізвище</th>
-        <th>По-батькові</th>
-        <th>Номер<br> телефону</th>
-        <th>Місто</th>
-        <th>Відділення НП</th>
-        <th>E-mail</th>
-        <th>Дата<br>замовлення</th>
-        <th>Загальна ціна</th>
+        <th style="font-size: 16px;">ID</th>
+        <th style="font-size: 16px;">Ім'я</th>
+        <th style="font-size: 16px;">Прізвище</th>
+        <th style="font-size: 16px;">По-батькові</th>
+        <th style="font-size: 16px;">Номер<br> телефону</th>
+        <th style="font-size: 16px;">Місто</th>
+        <th style="font-size: 16px;">Відділення НП</th>
+        <th style="font-size: 16px;">E-mail</th>
+        <th style="font-size: 16px;">Дата<br>замовлення</th>
+        <th style="font-size: 16px;">Загальна ціна</th>
 
     </tr>
     <?php if(!empty($orders)): ?>
     <?php foreach($orders as  $order): ?>
     <tr>
-        <td class="id-td"><?= $order['order_id'] ?></td>
-        <td class="name-td"><?= $order['name'] ?></td>
-        <td class="surname=td"><?= $order['surname'] ?></td>
-        <td class="patronymic-td"><?= $order['patronymic'] ?></td>
-        <td class="phone"><?= $order['number'] ?></td>
-        <td class="city"><?= $order['city'] ?></td>
-        <td class="post"><?= $order['post'] ?></td>
-        <td class="email"><?= $order['email'] ?></td>
-        <td class="date-td"><?= $order['date'] ?></td>
-        <td class="total-td"><?= $order['paid_amount'] ?></td>
+        <td style="font-size: 12px;" class="id-td"><?php echo $order['order_id']; $_SESSION['order_id'] = $order['order_id'];  ?></td>
+        <td style="font-size: 12px;" class="name-td"><?= $order['name'] ?></td>
+        <td style="font-size: 12px;" class="surname=td"><?= $order['surname'] ?></td>
+        <td style="font-size: 12px;" class="patronymic-td"><?= $order['patronymic'] ?></td>
+        <td style="font-size: 12px;" class="phone"><?= $order['number'] ?></td>
+        <td style="font-size: 12px;" class="city"><?= $order['city'] ?></td>
+        <td style="font-size: 12px;" class="post"><?= $order['post'] ?></td>
+        <td style="font-size: 12px;" class="email"><?= $order['email'] ?></td>
+        <td style="font-size: 12px;" class="date-td"><?= $order['date'] ?></td>
+        <td style="font-size: 12px;" class="total-td"><?= $order['paid_amount'] ?></td>
     </tr>
     <?php endforeach;?>
     <?php endif;?>
 </table>
 
-<table>
-    <th>Товар</th>
-    <th>Ціна</th>
-    <th>Кількість</th>
+<table width="400" class="tbl2">
+    <th style="font-size: 16px;">ID</th>
+    <th style="font-size: 16px;">Товар</th>
+    <th style="font-size: 16px;">Ціна</th>
+    <th style="font-size: 16px;">Кількість</th>
 
+    <?php if(!empty($order_products)): ?>
+    <?php foreach($order_products as  $products): ?>
+
+
+    <tr>
+        <td style="font-size: 12px;"><?=$products['cart_id']?></td>
+        <td style="font-size: 12px;"><?php
+            $name = explode(",",$products['product_name']);
+            echo $products['product_name'];
+            ?></td>
+        <td style="font-size: 12px;"><?=$products['product_price'] ?></td>
+        <td style="font-size: 12px;"><?=$products['quantity'] ?></td>
+    </tr>
+        <?php endforeach;?>
+         <?php endif;?>
 </table>
 
 

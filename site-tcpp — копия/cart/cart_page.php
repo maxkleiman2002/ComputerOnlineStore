@@ -22,7 +22,7 @@ if(!empty($_GET["action"])) {
 }
 
 
-print_r($_SESSION['cart.sum']);
+
 
 ?>
 <!DOCTYPE html>
@@ -215,7 +215,7 @@ print_r($_SESSION['cart.sum']);
 
 </div>
 
-<?php print_r($_SESSION['cart_category']);?>
+
 <footer>
 
     <div class="logo-wrapper">

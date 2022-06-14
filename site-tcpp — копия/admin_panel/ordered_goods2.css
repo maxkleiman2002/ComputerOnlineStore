@@ -18,7 +18,7 @@ html,body{
 }
 body{
     font-family: "Lucida Sans Unicode";
-    font-size:18px;
+    font-size:22px;
 }
 
 header ul{
@@ -140,14 +140,33 @@ table{
     margin-top: 40px;
     padding: 10px;
     color:#fff;
-    margin-left: 13%;
+    margin-left: 5%;
+    float: left;
+
+}
+.tbl2{
+    position: relative;
+    right: 85px;
+}
+.tbl2 th{
+    height: 50px;
+
+}
+.tbl2 td{
+    height: 40px;
+}
+.tbl1{
+    margin-left: 130px;
+}
+.tbl1 td{
+    height: 53px;
 }
 td{
     border: 2px solid #6C85A4;
-
+    font-size: 14px;
     text-align: center;
     color: black;
-    padding: 20px;
+    padding: 12px;
 }
 
 th{

@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $grand_qty = mysqli_real_escape_string($con,$_POST['total_qty']);
     $date = date('Y/m/d H:i:s');
 
-    print_r($city);
+
 
     mysqli_select_db($con, "compshop");
     mysqli_query($con, "INSERT orders (email, number, post, payment_method, paid_amount,name, surname, patronymic, date,city) 
@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     mysqli_select_db($con, "compshop");
     mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category)
-    VALUES ('" . json_encode($_SESSION['cart_title']) . "', '" . json_encode($_SESSION['cart_price']) . "', '" . json_encode($_SESSION['cart_qty']). "','" . json_encode($_SESSION['cart_category']) . "')");
+    VALUES ('" . implode("<br><br>",$_SESSION['cart_title']) . "', '" . implode("<br><br>",$_SESSION['cart_price']) . "', '" . implode("<br><br>" ,$_SESSION['cart_qty']). "','" . implode("<br><br>",$_SESSION['cart_category']) . "')");
 
 
     mysqli_select_db($con, "compshop");
