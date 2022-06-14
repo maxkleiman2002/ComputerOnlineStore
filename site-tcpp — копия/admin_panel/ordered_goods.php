@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    require_once '../inc/funcs.php';
+
+    $orders = get_orders();
+    $ordersDetail = get_orders_detail();
+    $order_products = get_cart_order();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta charset="utf-8">
     <title>Замовлені товари</title>
-    <link rel="stylesheet" href="ordered_goods.css">
+    <link rel="stylesheet" href="ordered_goods1.css">
 </head>
 <body>
 
@@ -42,24 +52,45 @@
     <h1>Замовлені товари</h1>
 </div>
 
-<table>
+<table width="500">
     <tr>
         <th>ID</th>
         <th>Ім'я</th>
         <th>Прізвище</th>
         <th>По-батькові</th>
-        <th>Номер телефону</th>
+        <th>Номер<br> телефону</th>
         <th>Місто</th>
         <th>Відділення НП</th>
         <th>E-mail</th>
-        <th>Назва товару</th>
-        <th>Артикул</th>
-        <th>Ціна</th>
-    </tr>
-    <tr>
+        <th>Дата<br>замовлення</th>
+        <th>Загальна ціна</th>
 
     </tr>
+    <?php if(!empty($orders)): ?>
+    <?php foreach($orders as  $order): ?>
+    <tr>
+        <td class="id-td"><?= $order['order_id'] ?></td>
+        <td class="name-td"><?= $order['name'] ?></td>
+        <td class="surname=td"><?= $order['surname'] ?></td>
+        <td class="patronymic-td"><?= $order['patronymic'] ?></td>
+        <td class="phone"><?= $order['number'] ?></td>
+        <td class="city"><?= $order['city'] ?></td>
+        <td class="post"><?= $order['post'] ?></td>
+        <td class="email"><?= $order['email'] ?></td>
+        <td class="date-td"><?= $order['date'] ?></td>
+        <td class="total-td"><?= $order['paid_amount'] ?></td>
+    </tr>
+    <?php endforeach;?>
+    <?php endif;?>
 </table>
+
+<table>
+    <th>Товар</th>
+    <th>Ціна</th>
+    <th>Кількість</th>
+
+</table>
+
 
 
 

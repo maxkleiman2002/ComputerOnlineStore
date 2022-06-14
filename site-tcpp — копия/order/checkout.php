@@ -39,9 +39,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $grand_qty = mysqli_real_escape_string($con,$_POST['total_qty']);
     $date = date('Y/m/d H:i:s');
 
+    print_r($city);
+
     mysqli_select_db($con, "compshop");
-    mysqli_query($con, "INSERT orders (email, number, post, payment_method, paid_amount,name, surname, patronymic, date) 
-    VALUES ('" . $email . "', '" . $phone . "','" . $post . "', '" . $payment_method. "','" . $grand_total. "','" . $name . "','" . $surname . "','" . $patronymic. "','" . $date . "')");
+    mysqli_query($con, "INSERT orders (email, number, post, payment_method, paid_amount,name, surname, patronymic, date,city) 
+    VALUES ('" . $email . "', '" . $phone . "','" . $post . "', '" . $payment_method. "','" . $grand_total. "','" . $name . "','" . $surname . "','" . $patronymic. "','" . $date . "','" . $city . "')");
 
     mysqli_select_db($con, "compshop");
     mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category)

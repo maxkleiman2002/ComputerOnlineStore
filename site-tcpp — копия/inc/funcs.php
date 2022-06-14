@@ -18,6 +18,27 @@ function get_products(): array
    return $res->fetchAll();
 
 }
+function get_orders(): array
+{
+    global $pdo;
+    $res = $pdo->query("SELECT * FROM compshop.orders");
+    return $res->fetchAll();
+
+}
+function get_orders_detail(): array
+{
+    global $pdo;
+    $res = $pdo->query("SELECT * FROM compshop.ordersdetail");
+    return $res->fetchAll();
+
+}
+function get_cart_order(): array
+{
+    global $pdo;
+    $res = $pdo->query("SELECT * FROM compshop.cart");
+    return $res->fetchAll();
+
+}
 function delete_product($id)
 {
     global $pdo;
