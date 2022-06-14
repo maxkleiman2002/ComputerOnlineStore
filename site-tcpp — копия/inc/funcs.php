@@ -25,6 +25,13 @@ function get_orders(): array
     return $res->fetchAll();
 
 }
+function get_order(string $email): array
+{
+    global $pdo;
+    $res = $pdo->query("SELECT * FROM compshop.orders WHERE `email` = $email");
+    return $res->fetchAll();
+
+}
 function get_orders_detail(): array
 {
     global $pdo;
@@ -45,6 +52,7 @@ function delete_product($id)
     $pdo->query("DELETE FROM compshop.products WHERE id = $id");
 
 }
+
 //function get_product(int $id)
 function get_product(int $id): array|false
 {

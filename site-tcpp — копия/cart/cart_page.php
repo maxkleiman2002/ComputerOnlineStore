@@ -66,6 +66,7 @@ if(!empty($_GET["action"])) {
 
             }
             else{
+
                 echo ' <li ><a href = "../authorization.php" ><button class="auth_but" > Вхід</button ></a ></li >';
             }
             ?>

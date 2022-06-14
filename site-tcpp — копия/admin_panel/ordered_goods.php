@@ -38,7 +38,19 @@
             <li><a href="ordered_goods.php">Замовлені товари</a></li>
             <li><a href="admin_catalog.php">Каталог товарів</a> </li>
 
-            <li><a href="../authorization.php"><button class="auth_but">Вхід</button></a></li>
+
+
+            <?php
+            if($_SESSION['user']) {
+
+                echo ' <li ><a href = "../vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+
+            }
+            else{
+
+                echo ' <li ><a href = "../authorization.php" ><button class="auth_but" > Вхід</button ></a ></li >';
+            }
+            ?>
 
         </ul>
     </nav>

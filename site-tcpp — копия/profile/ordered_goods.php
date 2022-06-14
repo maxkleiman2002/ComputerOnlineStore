@@ -3,6 +3,9 @@ session_start();
 if(!$_SESSION['user']){
     header("Location: ../authorization.php");
 }
+require_once '../inc/funcs.php';
+$order = get_order("maxkleiman2002@gmail.com");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +14,7 @@ if(!$_SESSION['user']){
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta charset="utf-8">
     <title>Авторизація</title>
-    <link rel="stylesheet" href="profile_main1.css">
+    <link rel="stylesheet" href="ordered_goods_profile.css">
 </head>
 <body>
 
@@ -47,24 +50,27 @@ if(!$_SESSION['user']){
 </header>
 
 <div class="main">
-<div class="sidebar">
-    <nav>
-        <ul>
-           </span>  <li class="info_about"><img src="../icons/profile2.png" alt="profile">
-                <a href="profile_main.php">
-                    <span class="name-about"> <?=$_SESSION['user']['name'] ?> <?=$_SESSION['user']['patronymic'] ?></span> <br>
-                    <span class="email-about"><?=$_SESSION['user']['email'] ?></span>
-                </a> </li>
-            <li class="orders"><img src="../icons/orders.png" alt="orders"> <a href="ordered_goods.php">Мої замовлення</a></li>
-            <li class="wallet"><img src="../icons/wallet.png" alt="wallet"><a href="wallet_profile.php">Мій гаманець</a></li>
-            <li class="comment"><img src="../icons/comments.png" alt="comments"><a href="comment_profile.php">Мої відгуки</a></li>
-            <li class="tracking"><img src="../icons/tracking.png" alt="tracking"><a href="track_profile.php">Відслідкувати товар</a></li>
-        </ul>
-    </nav>
-</div>
+    <div class="sidebar">
+        <nav>
+            <ul>
+                </span>  <li class="info_about"><img src="../icons/profile2.png" alt="profile">
+                    <a href="">
+                        <span class="name-about"> <?=$_SESSION['user']['name'] ?> <?=$_SESSION['user']['patronymic'] ?></span> <br>
+                        <span class="email-about"><?=$_SESSION['user']['email'] ?></span>
+                    </a> </li>
+                <li class="orders"><img src="../icons/orders.png" alt="orders"> <a href="profile_main.php">Мої замовлення</a></li>
+                <li class="wallet"><img src="../icons/wallet.png" alt="wallet"><a href="wallet_profile.php">Мій гаманець</a></li>
+                <li class="comment"><img src="../icons/comments.png" alt="comments"><a href="comment_profile.php">Мої відгуки</a></li>
+                <li class="tracking"><img src="../icons/tracking.png" alt="tracking"><a href="track_profile.php">Відслідкувати товар</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="content">
-        <h1>Особисті дані</h1>
+        <h1>Мої замовлення</h1>
+        <?php foreach ($order as $elem):?>
+            <p><?=$elem ?></p>
+        <?php endforeach; ?>
     </div>
 </div>
 
