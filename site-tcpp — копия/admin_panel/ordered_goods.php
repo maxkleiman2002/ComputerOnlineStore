@@ -35,16 +35,11 @@
 
     <nav>
         <ul class="f1">
-            <li><a href="../main_screen.php">Головна</a></li>
-            <li><a href="../delivety.php">Доставка</a></li>
-            <li><a href="../payment.php">Оплата</a></li>
-            <li><a href="../contacts.php">Контакти</a></li>
-            <li><a href="../authorization.php"><button class="auth_but">Вхід</button></a></li>
-            <li><a href="../cart/cart_page.php" id="#get-cart"><img src="../cart.svg"></a></li>
+            <li><a href="ordered_goods.php">Замовлені товари</a></li>
+            <li><a href="admin_catalog.php">Каталог товарів</a> </li>
 
-            <li><div class="count-cart">
-                    <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
-                </div>
+            <li><a href="../authorization.php"><button class="auth_but">Вхід</button></a></li>
+
         </ul>
     </nav>
 </header>

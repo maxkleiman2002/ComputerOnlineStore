@@ -46,7 +46,7 @@ nav p {
 }
 .f1 li{
     float:left;
-    margin-left: 85px;
+    margin-left: 155px;
     margin-top: 45px;
     position: relative;
 }
@@ -146,7 +146,7 @@ button.auth_but{
 .main h1{
     text-align: center;
     position: relative;
-    top: 25px;
+    top: 50px;
 }
 .add_item a{
     text-decoration: none;
@@ -164,7 +164,7 @@ button.auth_but{
     letter-spacing: .5px;
     position: relative;
     bottom: 5px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .add_item a:hover{
     text-decoration: underline;
@@ -178,7 +178,7 @@ table{
     border-collapse: collapse;
     border: 2px solid black;
 
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 15px;
     color:#fff;
     margin-left: 13%;

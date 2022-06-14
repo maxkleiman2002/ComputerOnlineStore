@@ -37,7 +37,7 @@ if(!empty($_GET["action"])) {
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta charset="utf-8">
     <title>Каталог</title>
-    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="catalog2.css">
     <script defer src = ../assets/popups.js></script>
     <script defer src = ../assets/popups2.js></script>
 </head>
@@ -59,17 +59,12 @@ if(!empty($_GET["action"])) {
 
     <nav>
         <ul class="f1">
-            <li><a href="../main_screen.php">Головна</a></li>
-            <li><a href="../delivety.php">Доставка</a></li>
-            <li><a href="../payment.php">Оплата</a></li>
-            <li><a href="../contacts.php">Контакти</a></li>
+            <!--<li><a href="../main_screen.php">Головна</a></li>-->
+            <li><a href="ordered_goods.php">Замовлені товари</a></li>
+            <li><a href="admin_catalog.php">Каталог товарів</a> </li>
             <li><a href="../authorization.php"><button class="auth_but">Вхід</button></a></li>
-            <li><a href="../cart/cart_page.php" id="#get-cart"><img alt="Корзина" src="../cart.svg"></a></li>
 
-            <li><div class="count-cart">
-                    <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
-                </div>
-            </li>
+
         </ul>
     </nav>
 </header>

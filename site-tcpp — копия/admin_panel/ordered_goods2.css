@@ -46,7 +46,7 @@ nav p {
 }
 .f1 li{
     float:left;
-    margin-left: 85px;
+    margin-left: 155px;
     margin-top: 45px;
     position: relative;
 }
@@ -126,7 +126,7 @@ button.auth_but{
 .main h1{
     text-align: center;
     position: relative;
-    top: 25px;
+    top: 50px;
 }
 
 
@@ -137,7 +137,7 @@ table{
     border: 2px solid black;
 
 
-    margin-top: 40px;
+    margin-top: 100px;
     padding: 10px;
     color:#fff;
     margin-left: 5%;
@@ -159,7 +159,7 @@ table{
     margin-left: 130px;
 }
 .tbl1 td{
-    height: 53px;
+    height: 90px;
 }
 td{
     border: 2px solid #6C85A4;
