@@ -6,8 +6,11 @@ require_once '../inc/connect.php';
 require_once '../inc/funcs.php';
 $products = get_products();
 
-
-
+$_SESSION['cart_title'] = array();
+$_SESSION['cart_img'] = array();
+$_SESSION['cart_price'] = array();
+$_SESSION['cart_qty'] = array();
+$_SESSION['cart_category'] = array();
 if(!empty($_GET["action"])) {
     switch($_GET["action"]) {
         case "empty":
@@ -96,8 +99,15 @@ if(!empty($_GET["action"])) {
                                 <td class="td-img"><a href="#"><img src="../Gamer/<?=$item['img'] ?>" alt="<?=$item['title'] ?>"/></a></td>
                                 <td class="td-title"><a href="#"><?=$item['title'] ?></a></td>
                                 <td class="td-price"><?=$item['price'] ?></td>
-                                <td class="td-city"><?=$item['qty'] ?></td>
+                                <td class="td-qty"><?=$item['qty'] ?></td>
                                 <td><a href="cart_page.php?page=cart&remove=<?=$item['id']?>" class="remove">Remove</a></td>
+                                <?php
+                                array_push($_SESSION['cart_title'],$item['title']);
+                                array_push($_SESSION['cart_img'],$item['img']);
+                                array_push($_SESSION['cart_price'],$item['price']);
+                                array_push($_SESSION['cart_qty'],$item['qty']);
+                                array_push($_SESSION['cart_category'],$item['category']);
+                                ?>
 
 
 
@@ -108,9 +118,16 @@ if(!empty($_GET["action"])) {
                                 <td class="td-img"><a href="#"><img src="../CompComponent/<?=$item['img'] ?>" alt="<?=$item['title'] ?>"/></a></td>
                                 <td class="td-title"><a href="#"><?=$item['title'] ?></a></td>
                                 <td class="td-price"><?=$item['price'] ?></td>
-                                <td class="td-city"><?=$item['qty'] ?></td>
+                                <td class="td-qty"><?=$item['qty'] ?></td>
                                 <td><a href="cart_page.php?page=cart&remove=<?=$item['id']?>" class="remove">Remove</a></td>
 
+                                <?php
+                                array_push($_SESSION['cart_title'],$item['title']);
+                                array_push($_SESSION['cart_img'],$item['img']);
+                                array_push($_SESSION['cart_price'],$item['price']);
+                                array_push($_SESSION['cart_qty'],$item['qty']);
+                                array_push($_SESSION['cart_category'],$item['category']);
+                                ?>
 
 
                             </tr>
@@ -120,8 +137,14 @@ if(!empty($_GET["action"])) {
                                 <td class="td-img"><a href="#"><img src="../Electronics/<?=$item['img'] ?>" alt="<?=$item['title'] ?>"/></a></td>
                                 <td class="td-title"><a href="#"><?=$item['title'] ?></a></td>
                                 <td class="td-price"><?=$item['price'] ?></td>
-                                <td class="td-city"><?=$item['qty'] ?></td>
+                                <td class="td-qty"><?=$item['qty'] ?></td>
                                 <td><a href="cart_page.php?page=cart&remove=<?=$item['id']?>" class="remove">Remove</a></td>
+                                <?php
+                                array_push($_SESSION['cart_title'],$item['title']);
+                                array_push($_SESSION['cart_img'],$item['img']);
+                                array_push($_SESSION['cart_price'],$item['price']);
+                                array_push($_SESSION['cart_qty'],$item['qty']);
+                                ?>
 
                             </tr>
                         <?php endif; ?>
@@ -130,17 +153,20 @@ if(!empty($_GET["action"])) {
                                 <td class="td-img"><a href="#"><img src="../CompAndNote/<?=$item['img'] ?>" alt="<?=$item['title'] ?>"/></a></td>
                                 <td class="td-title"><a href="#"><?=$item['title'] ?></a></td>
                                 <td class="td-price"><?=$item['price'] ?></td>
-                                <td class="td-city"><?=$item['qty'] ?></td>
+                                <td class="td-qty"><?=$item['qty'] ?></td>
                                 <td><a href="cart_page.php?page=cart&remove=<?=$item['id']?>" class="remove">Remove</a></td>
+                                <?php
+                                array_push($_SESSION['cart_title'],$item['title']);
+                                array_push($_SESSION['cart_img'],$item['img']);
+                                array_push($_SESSION['cart_price'],$item['price']);
+                                array_push($_SESSION['cart_qty'],$item['qty']);
+                                array_push($_SESSION['cart_category'],$item['category']);
+                                ?>
 
                             </tr>
                         <?php endif; ?>
 
-                        <input type="hidden" name="category" value="<?=$item['category']?>"/>
-                        <input type="hidden" name="title" value="<?=$item['title']?>"/>
-                        <input type="hidden" name="price" value="<?=$item['price']?>"/>
-                        <input type="hidden" name="qty" value="<?=$item['qty']?>"/>
-                        <input type="hidden" name="id" value="<?=$item['id']?>"/>
+
 
 
                     <?php endforeach;?>
@@ -151,6 +177,7 @@ if(!empty($_GET["action"])) {
                 <div class="no-cart"><img src="smile.png" alt="no-cart"/> </div>
             <?php endif; ?>
         </div>
+
 
 
 
@@ -183,6 +210,8 @@ if(!empty($_GET["action"])) {
     </div>
 
 </div>
+
+<?php print_r($_SESSION['cart_category']);?>
 <footer>
 
     <div class="logo-wrapper">

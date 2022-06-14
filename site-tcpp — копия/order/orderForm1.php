@@ -18,6 +18,16 @@ $stack_price = [];
 $stack_qty = [];
 
 
+//print_r($_SESSION['cart_title']);
+//print_r($_SESSION['cart_img']);
+//print_r($_SESSION['cart_price']);
+//print_r($_SESSION['cart_qty']);
+//print_r($_SESSION['cart_category']);
+
+
+
+
+
 $dbHost = "localhost";
 $dbXeHost="localhost/XE";
 $dbUsername="root";
@@ -36,26 +46,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_select_db($con, "compshop");
 
 
-    $category = mysqli_real_escape_string($con,$_POST['category']);
-    $title = mysqli_real_escape_string($con,$_POST['title']);
-    $price = mysqli_real_escape_string($con,$_POST['price']);
-    $qty = mysqli_real_escape_string($con,$_POST['qty']);
-    $img = mysqli_real_escape_string($con,$_POST['img']);
-    $sum_qty = mysqli_real_escape_string($con,$_SESSION['cart.qty']);
-    $sum_price = mysqli_real_escape_string($con, $_POST['cart.sum']);
+//    $category = mysqli_real_escape_string($con,$_POST['category']);
+//    $title = mysqli_real_escape_string($con,$_POST['title']);
+//    $price = mysqli_real_escape_string($con,$_POST['price']);
+//    $qty = mysqli_real_escape_string($con,$_POST['qty']);
+//    $img = mysqli_real_escape_string($con,$_POST['img']);
+//    $sum_qty = mysqli_real_escape_string($con,$_SESSION['cart.qty']);
+//    $sum_price = mysqli_real_escape_string($con, $_POST['cart.sum']);
 
 
-    array_push($stack_title, $title);
-    array_push($stack_img, $img);
-    array_push($stack_price, $price);
-    array_push($stack_category, $category);
-    array_push($stack_qty, $qty);
 
-    print_r($stack_title);
-    print_r($stack_img);
-    print_r($stack_price);
-    print_r($stack_category);
-    print_r($stack_qty);
+
+
 
 
 
@@ -66,11 +68,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 //    ];
 //    var_dump($cartArray);
 
-
+    $title = json_encode($_SESSION['cart_title']);
+    print_r(json_decode($title));
 
     mysqli_select_db($con, "compshop");
-//    mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category)
-//    VALUES ('" . $title . "', '" . $price . "', '" . $qty. "','" . $category . "')");
+    mysqli_query($con, "INSERT cart (product_name, product_price,  quantity, category)
+    VALUES ('" . json_encode($_SESSION['cart_title']) . "', '" . json_encode($_SESSION['cart_price']) . "', '" . json_encode($_SESSION['cart_qty']). "','" . json_encode($_SESSION['cart_category']) . "')");
     mysqli_close($con);
 }
 
