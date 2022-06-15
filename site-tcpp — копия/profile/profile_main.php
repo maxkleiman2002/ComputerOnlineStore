@@ -11,7 +11,7 @@ if(!$_SESSION['user']){
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta charset="utf-8">
     <title>Авторизація</title>
-    <link rel="stylesheet" href="profile_main2.css">
+    <link rel="stylesheet" href="profile_main1.css">
 </head>
 <body>
 
@@ -34,7 +34,12 @@ if(!$_SESSION['user']){
             <li><a href="../delivety.php">Доставка</a></li>
             <li><a href="../payment.php">Оплата</a></li>
             <li><a href="../contacts.php">Контакти</a></li>
+
             <li><a href="../vendor/logout.php"><button class="auth_but">Вихід</button></a></li>
+
+            <li class="icon_profile">
+                <a href="profile_main.php"><img src="../icons/user.png" alt="user" width="20" height="20"></a>
+            </li>
 
             <li><a href="../cart/cart_page.php" id="#get-cart"><img src="../cart.svg"></a></li>
 
@@ -42,6 +47,8 @@ if(!$_SESSION['user']){
                     <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
                 </div>
             </li>
+
+
         </ul>
     </nav>
 </header>

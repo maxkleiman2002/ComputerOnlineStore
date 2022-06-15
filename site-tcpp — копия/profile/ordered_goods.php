@@ -41,9 +41,13 @@ $order = get_order("maxkleiman2002@gmail.com");
 
             <li><a href="../cart/cart_page.php" id="#get-cart"><img src="../cart.svg"></a></li>
 
+            <li class="icon_profile">
+                <a href="profile_main.php"><img src="../icons/user.png" alt="user" width="20" height="20"></a>
+            </li>
             <li><div class="count-cart">
                     <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
                 </div>
+
             </li>
         </ul>
     </nav>

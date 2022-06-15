@@ -13,7 +13,7 @@ session_start();
     <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Товари для геймерів</title>
-    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="products3.css">
 
 </head>
 <body>
@@ -44,6 +44,9 @@ session_start();
             if($_SESSION['user']) {
 
                 echo ' <li ><a href = "vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+                echo '<li class="icon_profile" style="position: relative; right:30px;">
+                <a href="profile/profile_main.php"><img src="icons/user.png" alt="user" width="20" height="20"></a>
+            </li>';
 
             }
             else{
@@ -51,12 +54,12 @@ session_start();
             }
             ?>
 
-                <li><a href="cart/cart_page.php" id="#get-cart"><img src="cart.svg"></a></li>
+            <li><a href="cart/cart_page.php" id="#get-cart"><img src="cart.svg"></a></li>
 
-                <li><div class="count-cart">
-                        <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
-                    </div>
-                </li>
+            <li><div class="count-cart">
+                    <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
+                </div>
+            </li>
 
 
         </ul>

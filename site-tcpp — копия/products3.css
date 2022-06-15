@@ -48,7 +48,7 @@ nav p {
 }
 .f1 li{
     float:left;
-    margin-left: 85px;
+    margin-left: 70px;
     margin-top: 45px;
     position: relative;
 }
@@ -84,6 +84,14 @@ nav p {
 .logo-text p{
     font-weight: bold;
 
+}
+.icon_profile{
+    position: relative;
+   
+}
+.count-cart{
+    position: relative;
+    right: 10px;
 }
 
 .main{
@@ -226,7 +234,8 @@ p.price{
 }
 .mini-count{
     position: relative;
-    left:8px;
+    left:12px;
+
 }
 .card-thumb img {
     max-height: 230px;
@@ -409,7 +418,7 @@ footer{
 
 .count-cart{
     position: relative;
-    right: 100px;
+    right: 85px;
     bottom: 7px;
     width: 35px;
     height: 35px;
@@ -422,9 +431,4 @@ footer{
 .no-cart{
     position: relative;
     left: 550px;
-}
-.mini-count{
-    position: relative;
-    left:11px;
-
 }

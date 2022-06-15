@@ -41,10 +41,14 @@
             if($_SESSION['user']) {
 
                echo ' <li ><a href = "vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+                echo '<li class="icon_profile">
+                <a href="profile/profile_main.php"><img src="icons/user.png" alt="user"></a>
+            </li>';
 
             }
             else{
                 echo ' <li ><a href = "authorization.php" ><button class="auth_but" > Вхід</button ></a ></li >';
+
             }
             ?>
             <li><a href="cart/cart_page.php" id="#get-cart"><img src="cart.svg"></a></li>

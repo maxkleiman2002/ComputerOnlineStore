@@ -37,6 +37,9 @@ require_once 'vendor/signin.php';
             if($_SESSION['user']) {
 
                 echo ' <li ><a href = "vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+                echo '<li class="icon_profile">
+                <a href="profile/profile_main.php"><img src="icons/user.png" alt="user" width="20" height="20"></a>
+            </li>';
             }
             else{
                 echo ' <li ><a href = "authorization.php" ><button class="auth_but" > Вхід</button ></a ></li >';
