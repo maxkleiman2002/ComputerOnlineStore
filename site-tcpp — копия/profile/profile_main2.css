@@ -118,6 +118,10 @@ header nav p {
     bottom:30%;
     left:30px;
 }
+.sidebar{
+    position: relative;
+    bottom: 425px;
+}
 .sidebar ul{
     position: relative;
     top: 70px;
@@ -126,11 +130,11 @@ header nav p {
 .sidebar ul li{
     background-color: #4381B4 ;
     margin-top: 15px;
-    width: 330px ;
-    height: 70px;
+    width: 400px ;
+    height: 80px;
     font-size: 18px;
     border-radius: 10px;
-    margin-left: 13%;
+    margin-left: 5%;
     list-style-type: none;
     padding-left: 15px;
 }
@@ -141,21 +145,104 @@ header nav p {
 .sidebar{
     position: relative;
     left:200px;
-    width: 350px;
+    width: 30%;
 }
 .sidebar,.content{
-    float: left;
+    display: inline-block;
 }
 
 .content{
-    width: 730px;
+    width: 60%;
+    position: relative;
+    padding-left: 150px;
+    top:100px;
+
+
 }
 .content h1{
     position: relative;
-    left:350px;
-    top:75px;
+    margin-left: 10px;
+    top:60px;
 }
+.content img{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top:15px;
 
+}
+.personal-data,.contacts-data,.delivery-data{
+    margin-top: 40px;
+
+    background-color: #EEF;
+    color: #4D4B4B;
+    border: 1px solid #999999;
+    border-radius: 10px 10px;
+    -moz-border-radius: 10px 10px;
+    -webkit-border-radius: 10px 10px;
+    box-shadow: 2px 2px 3px #999;
+    -webkit-box-shadow: 2px 2px 3px #999;
+    -moz-box-shadow: 2px 2px 3px #999;
+    padding: 15px;
+
+    width: 800px;
+
+}
+.personal-data{
+    height: 325px;
+}
+.contacts-data{
+    height: 260px;
+}
+.contacts-data input{
+    width: 280px;
+}
+.contacts-data label{
+    font-size: 14px;
+}
+#birth-day,#birth-month,#birth-year{
+    position: relative;
+    top:7px;
+}
+.delivery-data p{
+    position: relative;
+    bottom: 10px;
+}
+.personal-data p{
+    position: relative;
+    bottom: 10px;
+}
+.contacts-data p{
+    position: relative;
+    bottom: 10px;
+}
+.text{
+    margin-left: 10px;
+}
+.wrapp-field{
+    position: relative;
+    top:50px;
+
+}
+.contacts-data{
+    position: relative;
+    top:50px;
+
+}
+.delivery-data{
+    position: relative;
+    top:120px;
+    right: 15px;
+    height: 240px;
+}
+.block3,.block4{
+    display: inline-block;
+    margin-top: 20px;
+
+}
+.block4{
+    margin-left: 70px;
+}
 button.auth_but{
     width: 100px;
     height: 50px;
@@ -169,12 +256,67 @@ button.auth_but{
     position: relative;
     bottom: 5px;
 }
+.wrapper-delivery{
+    position: relative;
+    top:10px;
+}
+button.edit{
+    width: 140px;
+    height: 50px;
+    border-radius: 25px;
+    background-color:#246FB5;
+    color:#fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: .5px;
+    position: relative;
+    top: 30px;
+}
 button:active{
     background-color: #14365D;
 }
 
+.strelka{
+    position: relative;
+    left:590px;
+    top: 3px;
+}
+.strelka2{
+    position: relative;
+    left:530px;
+    top:3px;
+}
+.wrapper-personal-data label{
+    font-size: 14px;
+}
+input,select{
+    font-size: 20px;
+    padding: 5px;
+}
 
+.block1,.block2{
+    display: inline-block;
 
+}
+.block5,.block6{
+    display: inline-block;
+
+}
+.block6{
+    position: relative;
+    margin-left: 70px;
+}
+.block1,.block2{
+    display: inline-block;
+
+}
+.block2{
+    margin-left: 100px;
+}
+.clear{
+    clear: both;
+}
 p.err-msg3{
     border: 2px solid #E27E1B;
     border-radius: 3px;

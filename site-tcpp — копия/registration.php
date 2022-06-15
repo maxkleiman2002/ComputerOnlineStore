@@ -70,7 +70,7 @@ if($_SESSION['user']){
         </div>
 
         <div class="group">
-            <label for="birth-day"> День народження: </label>
+            <label for="birth-day" > День народження: </label>
                 <select name="birth-day" id="birth-day">
                     <option value="1">1</option>
                     <option value="2">2</option>

@@ -183,7 +183,7 @@ p.err-msg3{
 }
 
 footer{
-    top:440px;
+    top:460px;
     position: relative;
     background-color: #20314F;
     height: 400px;
@@ -427,9 +427,10 @@ button:active{
 footer{
     position: relative;
     top:200px;
+    padding: 10px;
     background-color: #20314F;
     height: 380px;
-    margin-top: 200px;
+    margin-top: 250px;
 }
 .footer-logo{
     border-radius: 15%;

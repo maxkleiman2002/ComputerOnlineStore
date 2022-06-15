@@ -5,7 +5,7 @@
     if($_SESSION['user']){
         header("Location: profile/profile_main.php");
     }
-
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie-edge">
   <meta charset="utf-8">
   <title>Авторизація</title>
-  <link rel="stylesheet" href="authorization2.css">
+  <link rel="stylesheet" href="authorization1.css">
 </head>
 <body>
 

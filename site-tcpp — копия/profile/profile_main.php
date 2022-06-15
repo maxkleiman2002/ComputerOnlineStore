@@ -11,7 +11,7 @@ if(!$_SESSION['user']){
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta charset="utf-8">
     <title>Авторизація</title>
-    <link rel="stylesheet" href="profile_main1.css">
+    <link rel="stylesheet" href="profile_main2.css">
 </head>
 <body>
 
@@ -65,6 +65,87 @@ if(!$_SESSION['user']){
 
     <div class="content">
         <h1>Особисті дані</h1>
+        <div class="wrapp-field">
+        <div class="personal-data">
+            <p> <img src="../icons/personal_data.png"> <span class="text">Особисті дані</span> <!--<span class="strelka2" >&#11015;</span>--> </p>
+            <div class="wrapper-personal-data">
+                <div class="block1">
+                    <form action="data_check.php" method="post">
+                    <div class="group">
+                    <label for="surname">Прізвище</label>
+                        <br>
+                        <input name="surname" id="surname" value="<?=$_SESSION['user']['surname'] ?>">
+                    </div>
+
+                     <div class="group">
+                            <label for="name">Ім'я</label>
+                         <br>
+                            <input name="name" id="name" value="<?=$_SESSION['user']['name'] ?>">
+                        </div>
+
+                </div>
+                <div class="block2">
+                    <div class="group" style="position: relative; bottom: 17px;">
+                        <br>
+                        <label for="patronymic">По батькові </label><br>
+                        <input name="patronymic" id="surname" value="<?=$_SESSION['user']['patronymic'] ?>">
+
+                    </div>
+
+                    <div class="group"
+                    <label style="font-size: 14px; position: relative; bottom: 6px;" id="date"> Дата народження: </label><br>
+                    <input type="text" name="date" id = "date" value="<?=$_SESSION['user']['dayOfBirth']?>.<?=$_SESSION['user']['monthOfBirth']?>.<?=$_SESSION['user']['yearOfBirth']?>">
+                    </div>
+            </div>
+
+                </div>
+            <button type="submit" class="edit">Редагувати</button>
+                </form>
+            </div>
+        </div>
+        <div class="contacts-data">
+            <p><img src="../icons/contacts.png"> <span class="text">Контакти</span> <!--<span class="strelka">&#11015;</span>--> </p>
+            <form action = "contacts_check.php" method="POST">
+            <div class="wrapper-contacts" ">
+                <div class="block3">
+                <div class="group">
+                    <label for="email">Електронна пошта</label><br>
+                    <input  name="email" id="email" value="<?=$_SESSION['user']['email'] ?>">
+            </div>
+                </div>
+                <div class="block4">
+                <div class="group">
+                    <label for="number">Номер телефону</label><br>
+                    <input name="phone" id="number" value="<?=$_SESSION['user']['number'] ?>">
+                </div>
+                </div>
+
+            <button type="submit" class="edit">Редагувати</button>
+            </form>
+        </div>
+
+        <div class="delivery-data">
+            <p><img src="../icons/delivery.png"> <span class="text">Доставка</span> <!-- <span class="strelka">&#11015;</span>--> </p>
+            <form action="delivery_check.php" method="post">
+            <div class="wrapper-delivery">
+                    <div class="block5">
+                        <div class="group">
+                            <label for="email">Номер відділення НП</label><br>
+                            <input name="post" id="email" value="<?=$_SESSION['user']['post'] ?>">
+                        </div>
+                    </div>
+                    <div class="block6">
+                        <div class="group">
+                            <label for="city">Населений пукнт</label><br>
+                            <input name="city" id="city" value="<?=$_SESSION['user']['city'] ?>">
+                        </div>
+                    </div>
+            </div>
+                <button type="submit" class="edit">Редагувати</button>
+            </form>
+
+
+    </div>
     </div>
 </div>
 
