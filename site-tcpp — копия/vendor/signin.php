@@ -21,6 +21,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = md5(mysqli_real_escape_string($con, $_POST['password']));
 
     $check_user = mysqli_query($con,"SELECT * FROM `users`  WHERE `email` ='$email' AND `password` = '$password'");
+    $pass = mysqli_real_escape_string($con,$_POST['password']);
+
+    $check_admin = mysqli_query($con,"SELECT * FROM `admin`  WHERE `email` ='$email' AND `password` = '$pass'");
     if(mysqli_num_rows($check_user) > 0){
         $user = mysqli_fetch_assoc($check_user);
         $_SESSION['user'] = [
@@ -37,7 +40,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             "email" =>$user['email'],
             "password"=>$user['password'],
         ];
-        header("Location: ../profile/profile_main.php");
+        $_SESSION['admin']  =false;
+
+            header("Location: ../profile/profile_main.php");
+
+
+    }
+    elseif  (mysqli_num_rows($check_admin) > 0){
+        $_SESSION['admin'] = true;
+        header("Location: ../admin_panel/admin_catalog.php");
     }
     else{
         $_SESSION['message3'] = 'Невірний логін або пароль';

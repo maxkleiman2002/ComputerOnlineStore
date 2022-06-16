@@ -1,6 +1,12 @@
 <?php
 session_start();
 require_once '../inc/funcs.php';
+if (!$_SESSION['admin']) {
+    header('Location: ../authorization.php');
+}
+
+
+
 $dbHost = "localhost";
 $dbXeHost="localhost/XE";
 $dbUsername="root";
@@ -64,9 +70,9 @@ if(!empty($_GET["action"])) {
             <li><a href="admin_catalog.php">Каталог товарів</a> </li>
             
             <?php
-            if($_SESSION['user']) {
+            if($_SESSION['admin']) {
 
-                echo ' <li ><a href = "../vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+                echo ' <li ><a href = "../vendor/logout_admin.php" ><button class="auth_but" > Вихід</button ></a ></li >';
 
             }
             else{

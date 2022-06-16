@@ -1,6 +1,9 @@
 <?php
     session_start();
     require_once '../inc/funcs.php';
+    if (! $_SESSION['admin']) {
+        header('Location: ../authorization.php');
+    }
 
     $orders = get_orders();
     $ordersDetail = get_orders_detail();
@@ -41,9 +44,9 @@
 
 
             <?php
-            if($_SESSION['user']) {
+            if($_SESSION['admin']) {
 
-                echo ' <li ><a href = "../vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+                echo ' <li ><a href = "../vendor/logout_admin.php" ><button class="auth_but" > Вихід</button ></a ></li >';
 
             }
             else{
