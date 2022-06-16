@@ -4,7 +4,7 @@ if(!$_SESSION['user']){
     header("Location: ../authorization.php");
 }
 require_once '../inc/funcs.php';
-$order = get_order("maxkleiman2002@gmail.com");
+
 
 ?>
 <!DOCTYPE html>
@@ -39,11 +39,12 @@ $order = get_order("maxkleiman2002@gmail.com");
             <li><a href="../contacts.php">Контакти</a></li>
             <li><a href="../vendor/logout.php"><button class="auth_but">Вихід</button></a></li>
 
+            <li class="icon_profile">
+                <a href="profile_main.php"><img src="../icons/user.png" alt="user" ></a>
+            </li>
             <li><a href="../cart/cart_page.php" id="#get-cart"><img src="../cart.svg"></a></li>
 
-            <li class="icon_profile">
-                <a href="profile_main.php"><img src="../icons/user.png" alt="user" width="20" height="20"></a>
-            </li>
+
             <li><div class="count-cart">
                     <span class="mini-count"> <?=$_SESSION['cart.qty'] ?? 0 ?></span>
                 </div>
@@ -58,11 +59,11 @@ $order = get_order("maxkleiman2002@gmail.com");
         <nav>
             <ul>
                 </span>  <li class="info_about"><img src="../icons/profile2.png" alt="profile">
-                    <a href="">
+                    <a href="profile_main.php">
                         <span class="name-about"> <?=$_SESSION['user']['name'] ?> <?=$_SESSION['user']['patronymic'] ?></span> <br>
                         <span class="email-about"><?=$_SESSION['user']['email'] ?></span>
                     </a> </li>
-                <li class="orders"><img src="../icons/orders.png" alt="orders"> <a href="profile_main.php">Мої замовлення</a></li>
+                <li class="orders"><img src="../icons/orders.png" alt="orders"> <a href="ordered_goods.php">Мої замовлення</a></li>
                 <li class="wallet"><img src="../icons/wallet.png" alt="wallet"><a href="wallet_profile.php">Мій гаманець</a></li>
                 <li class="comment"><img src="../icons/comments.png" alt="comments"><a href="comment_profile.php">Мої відгуки</a></li>
                 <li class="tracking"><img src="../icons/tracking.png" alt="tracking"><a href="track_profile.php">Відслідкувати товар</a></li>
@@ -72,9 +73,7 @@ $order = get_order("maxkleiman2002@gmail.com");
 
     <div class="content">
         <h1>Мої замовлення</h1>
-        <?php foreach ($order as $elem):?>
-            <p><?=$elem ?></p>
-        <?php endforeach; ?>
+
     </div>
 </div>
 

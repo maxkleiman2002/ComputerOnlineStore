@@ -25,8 +25,9 @@ function get_orders(): array
     return $res->fetchAll();
 
 }
-function get_order(string $email): array
+function get_order(int $id): array
 {
+
     global $pdo;
     $res = $pdo->query("SELECT * FROM compshop.orders WHERE `email` = $email");
     return $res->fetchAll();

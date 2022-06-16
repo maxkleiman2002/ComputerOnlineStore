@@ -12,7 +12,7 @@
     <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Каталог</title>
-    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="catalog1.css">
 </head>
 <body>
 <header>
@@ -41,6 +41,7 @@
             if($_SESSION['user']) {
 
                echo ' <li ><a href = "vendor/logout.php" ><button class="auth_but" > Вихід</button ></a ></li >';
+
                 echo '<li class="icon_profile">
                 <a href="profile/profile_main.php"><img src="icons/user.png" alt="user"></a>
             </li>';

@@ -21,12 +21,7 @@ header a{
     font-size: 18px;
 
 }
-.icon_profile img{
-    width: 40px;
-    height: 40px;
-    position: relative;
-    right: 150px;
-}
+
 .count-cart{
     position: relative;
     right: 100px;
@@ -46,7 +41,7 @@ header a{
 
 }
 button.auth_but{
-   width: 100px;
+    width: 100px;
     height: 50px;
     border-radius: 25px;
     background-color:#246FB5;

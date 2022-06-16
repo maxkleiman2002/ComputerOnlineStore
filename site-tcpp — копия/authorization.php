@@ -5,6 +5,7 @@
     if($_SESSION['user']){
         header("Location: profile/profile_main.php");
     }
+
 session_destroy();
 ?>
 <!DOCTYPE html>

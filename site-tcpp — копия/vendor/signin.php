@@ -35,22 +35,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             "city" => $user['city'],
             "post" => $user['post'],
             "email" =>$user['email'],
-            "password" =>$user['password'],
+            "password"=>$user['password'],
         ];
-//        if($email = "admin@admin.com" && $password = "1"){
-//            header("Location: ../admin_panel/admin_catalog.php");
-//        }
-//        if ($email != "admin@admin.com") {
-            header("Location: ../profile/profile_main.php");
-//        }
-
+        header("Location: ../profile/profile_main.php");
     }
     else{
         $_SESSION['message3'] = 'Невірний логін або пароль';
 
-            header("Location: ../authorization.php");
-
+        header("Location: ../authorization.php");
     }
-
 
 }
