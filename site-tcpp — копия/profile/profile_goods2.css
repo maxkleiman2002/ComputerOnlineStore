@@ -120,7 +120,7 @@ header nav p {
 }
 .sidebar ul{
     position: relative;
-    top: 70px;
+    top: 150px;
 
 }
 .sidebar ul li{
@@ -143,12 +143,31 @@ header nav p {
     left:200px;
     width: 350px;
 }
+
+
+.sidebar ul li{
+    background-color: #4381B4 ;
+    margin-top: 15px;
+    width: 400px ;
+    height: 80px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-left: 5%;
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.sidebar ul li a:active{
+    color: #a8bac7;
+}
 .sidebar,.content{
     float: left;
 }
 
 .content{
     width: 730px;
+    position: relative;
+    top:80px;
 }
 .content h1{
     position: relative;
@@ -302,6 +321,29 @@ footer{
 /*    position: relative;*/
 /*    right: 150px;*/
 /*}*/
+table{
+    border-collapse: collapse;
+    border: 2px solid black;
+    position: relative;
+    left:45%;
+    top:150px;
+
+}
+td{
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #97b0cb;
+}
+tr{
+    border: 2px solid black;
+}
+th{
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    background-color: #14365D;
+    color: #fff;
+}
 .contacts img{
     width: 40px;
     height: 40px;

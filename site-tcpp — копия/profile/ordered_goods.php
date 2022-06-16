@@ -5,6 +5,22 @@ if(!$_SESSION['user']){
 }
 require_once '../inc/funcs.php';
 
+$dbHost = "localhost";
+$dbXeHost="localhost/XE";
+$dbUsername="root";
+$dbPassword = "";
+
+$con = mysqli_connect($dbHost, $dbUsername, $dbPassword);
+if (!$con){
+    exit('Connect Error (' . mysqli_connect_errno() . ') '
+        . mysqli_connect_error());
+}
+mysqli_set_charset($con, 'utf-8');
+
+mysqli_select_db($con, "compshop");
+$email = $_SESSION['user']['email'];
+$result = mysqli_query($con,"SELECT * FROM orders WHERE email = '$email'");
+
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +30,7 @@ require_once '../inc/funcs.php';
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <meta charset="utf-8">
     <title>Авторизація</title>
-    <link rel="stylesheet" href="ordered_goods_profile.css">
+    <link rel="stylesheet" href="profile_goods2.css">
 </head>
 <body>
 
@@ -73,6 +89,34 @@ require_once '../inc/funcs.php';
 
     <div class="content">
         <h1>Мої замовлення</h1>
+        <table>
+            <tr>
+
+
+                <th style="font-size: 16px;">Ім'я</th>
+                <th style="font-size: 16px;">Прізвище</th>
+                <th style="font-size: 16px;">По батькові</th>
+                <th style="font-size: 16px;">Номер<br> телефону</th>
+                <th style="font-size: 16px;">Місто</th>
+                <th style="font-size: 16px;">Відділення НП</th>
+                <th style="font-size: 16px;">Дата<br>замовлення</th>
+                <th style="font-size: 16px;">Загальна ціна</th>
+
+            </tr>
+            <?php foreach ($result as $elem):?>
+            <tr>
+
+                <td><?=$elem['name'] ?></td>
+                <td><?=$elem['surname'] ?></td>
+                <td><?=$elem['patronymic'] ?></td>
+                <td><?=$elem['number'] ?></td>
+                <td><?=$elem['city'] ?></td>
+                <td><?=$elem['post'] ?></td>
+                <td><?=$elem['date'] ?></td>
+                <td><?=$elem['paid_amount'] ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
 
     </div>
 </div>
